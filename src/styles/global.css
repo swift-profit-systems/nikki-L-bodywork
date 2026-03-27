@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+:root {
+  --color-stone: #1a1714;
+  --color-bark: #2c2318;
+  --color-earth: #8b6914;
+  --color-clay: #c4a882;
+  --color-cream: #f5f0e8;
+  --color-white: #faf8f4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-stone);
+  color: var(--color-cream);
+}
+
+h1, h2, h3, .serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.btn-primary {
+  @apply inline-block bg-[#c4a882] text-[#1a1714] font-semibold px-8 py-3 tracking-wide hover:bg-[#d4bc9a] transition-colors duration-200;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.btn-outline {
+  @apply inline-block border border-[#c4a882] text-[#c4a882] font-semibold px-8 py-3 tracking-wide hover:bg-[#c4a882] hover:text-[#1a1714] transition-colors duration-200;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+}
+
+.gold-line {
+  width: 40px;
+  height: 1px;
+  background: var(--color-clay);
+  display: inline-block;
+}

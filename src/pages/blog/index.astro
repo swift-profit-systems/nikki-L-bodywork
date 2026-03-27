@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sorted = posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+<Layout title="Blog | Nikki Leonardi Bodywork" description="Insights on therapeutic massage, fascia, movement, and recovery from a 13-year Traverse City specialist.">
+  <div class="pt-16">
+    <section class="py-24 px-6 bg-[#1a1714]">
+      <div class="max-w-4xl mx-auto">
+        <p class="section-label mb-6">The Blog</p>
+        <h1 class="font-['Playfair_Display'] text-5xl text-[#f5f0e8] leading-tight mb-6">
+          What I've learned<br/><em class="text-[#c4a882]">from 13 years of<br/>talking to bodies.</em>
+        </h1>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 bg-[#100e0c]">
+      <div class="max-w-4xl mx-auto">
+        {sorted.length === 0 ? (
+          <div class="text-center py-20">
+            <p class="text-[#c4a882]/40">Posts coming soon.</p>
+          </div>
+        ) : (
+          <div class="space-y-px bg-white/5">
+            {sorted.map(post => (
+              <a href={`/blog/${post.data.slug}`} class="bg-[#100e0c] p-8 hover:bg-[#1a1714] transition-colors group block">
+                <p class="section-label mb-3">{new Date(post.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+                <h2 class="font-['Playfair_Display'] text-2xl text-[#f5f0e8] mb-3 group-hover:text-[#c4a882] transition-colors">{post.data.title}</h2>
+                <p class="text-[#c4a882]/50 text-sm leading-relaxed mb-4">{post.data.excerpt}</p>
+                <p class="text-[#c4a882] text-xs tracking-widest uppercase">Read →</p>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  </div>
+</Layout>

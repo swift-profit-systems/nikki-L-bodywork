@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Book a Session | Nikki Leonardi Bodywork Traverse City" description="Book your therapeutic massage session with Nikki Leonardi in Traverse City, MI. Online scheduling available 24/7.">
+  <div class="pt-16">
+    <section class="py-24 px-6 bg-[#1a1714]">
+      <div class="max-w-4xl mx-auto">
+        <p class="section-label mb-6">Booking</p>
+        <h1 class="font-['Playfair_Display'] text-5xl text-[#f5f0e8] mb-6 leading-tight">
+          Ready to book?<br/><em class="text-[#c4a882]">Let's get you scheduled.</em>
+        </h1>
+        <p class="text-[#c4a882]/60 max-w-lg leading-relaxed mb-12">
+          Select the session type and length that fits your goals. Not sure where to start? A 90-minute session gives enough time to assess and fully address your pattern.
+        </p>
+
+        <!-- Scheduling embed placeholder — swap with Acuity embed -->
+        <div class="border border-[#c4a882]/20 bg-[#100e0c] p-8 text-center min-h-[500px] flex flex-col items-center justify-center">
+          <p class="section-label mb-4">Online Scheduling</p>
+          <p class="text-[#c4a882]/40 text-sm mb-6">Scheduling powered by Acuity Scheduling</p>
+          <!-- REPLACE THIS with Acuity embed script once account is set up -->
+          <a href="https://nikkileonardibodywork.schedulista.com/" target="_blank" rel="noopener" class="btn-primary">
+            Book Online Now
+          </a>
+          <p class="text-[#c4a882]/30 text-xs mt-4">Opens booking in a new tab</p>
+        </div>
+
+        <!-- Location & contact -->
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+          <div class="border border-white/10 p-6">
+            <p class="section-label mb-3">Location</p>
+            <p class="text-[#c4a882]/70 text-sm">10691 E Carter Rd</p>
+            <p class="text-[#c4a882]/70 text-sm">Traverse City, MI 49684</p>
+            <a href="https://maps.google.com/maps?q=10691+East+Carter+Road,+Traverse+City,+MI" target="_blank" rel="noopener" class="text-[#c4a882] text-xs tracking-widest uppercase mt-3 block hover:text-[#d4bc9a]">Get Directions →</a>
+          </div>
+          <div class="border border-white/10 p-6">
+            <p class="section-label mb-3">Phone</p>
+            <a href="tel:2315905566" class="text-[#c4a882]/70 text-sm hover:text-[#c4a882] transition-colors">231-590-5566</a>
+          </div>
+          <div class="border border-white/10 p-6">
+            <p class="section-label mb-3">Gift Cards</p>
+            <p class="text-[#c4a882]/70 text-sm mb-3">Give the work. Available for any session type or dollar amount.</p>
+            <a href="#" class="text-[#c4a882] text-xs tracking-widest uppercase hover:text-[#d4bc9a]">Buy a Gift Card →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

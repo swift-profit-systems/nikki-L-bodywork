@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={`${post.data.title} | Nikki Leonardi Bodywork`} description={post.data.excerpt}>
+  <div class="pt-16">
+    <section class="py-20 px-6 bg-[#1a1714]">
+      <div class="max-w-3xl mx-auto">
+        <a href="/blog" class="text-[#c4a882]/50 text-xs tracking-widest uppercase hover:text-[#c4a882] mb-8 block">← Back to Blog</a>
+        <p class="section-label mb-4">{new Date(post.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+        <h1 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#f5f0e8] leading-tight mb-6">{post.data.title}</h1>
+        <div class="gold-line"></div>
+      </div>
+    </section>
+    <section class="py-16 px-6 bg-[#100e0c]">
+      <div class="max-w-3xl mx-auto prose prose-invert max-w-none
+        [&_p]:text-[#c4a882]/70 [&_p]:leading-relaxed
+        [&_h1]:font-serif [&_h1]:text-[#f5f0e8]
+        [&_h2]:font-serif [&_h2]:text-[#f5f0e8]
+        [&_h3]:font-serif [&_h3]:text-[#f5f0e8]
+        [&_a]:text-[#c4a882]
+        [&_li]:text-[#c4a882]/70
+        [&_strong]:text-[#f5f0e8]">
+        <Content />
+      </div>
+      <div class="max-w-3xl mx-auto mt-16 border-t border-white/10 pt-10">
+        <p class="text-[#c4a882]/60 text-sm mb-6">Ready to experience the work?</p>
+        <a href="/book" class="btn-primary">Book a Session</a>
+      </div>
+    </section>
+  </div>
+</Layout>

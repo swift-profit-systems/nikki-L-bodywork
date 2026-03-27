@@ -1,0 +1,23 @@
+{
+  "name": "nikki-l-bodywork",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "node ./dist/server/entry.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.2.5",
+    "astro": "^5.5.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.17",
+    "tailwindcss": "^4.0.17"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
