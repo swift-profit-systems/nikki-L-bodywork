@@ -8,7 +8,8 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(join(__dirname, 'dist')));
 
-app.get('*', (req, res) => {
+// Fallback — serve index.html for any unmatched route
+app.use((req, res) => {
   res.sendFile(join(__dirname, 'dist', 'index.html'));
 });
 
