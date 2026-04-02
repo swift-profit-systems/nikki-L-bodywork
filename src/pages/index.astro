@@ -79,7 +79,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-[#c4a882]/50 text-sm leading-relaxed mb-8 italic">
             "The deepest most comfortable pressure ever. 1st time doing this type of massage and I can't wait for my next one." — Matt Schram
           </p>
-          <a href="/services/ashiatsu" class="btn-primary">Learn About Ashiatsu</a>
+          <a href="/tools" class="btn-primary">Learn About Ashiatsu</a>
         </div>
         <div class="grid grid-cols-2 gap-3">
           <img src="/images/ashiatsu-1.png" alt="Ashiatsu barefoot massage in practice" class="w-full h-64 object-cover object-top" />
@@ -129,151 +129,67 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- SERVICES PREVIEW -->
-  <section class="py-20 px-6 bg-[#1a1714]">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-14">
-        <p class="section-label mb-4">Services</p>
-        <h2 class="font-['Playfair_Display'] text-4xl text-[#f5f0e8]">Every session is integrative.<br/><em class="text-[#c4a882]">The modality follows the body.</em></h2>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
-        {[
-          { name: 'Ashiatsu (Barefoot) Massage', desc: 'The lead service. Barefoot pressure that reaches where hands stop. One of very few practitioners in Northern Michigan.', href: '/services/ashiatsu', tag: 'Signature' },
-          { name: 'Deep Tissue Massage', desc: 'Targeted work for chronic tension and overuse patterns. 13 years of knowing the difference between pressure and effective pressure.', href: '/services/deep-tissue', tag: null },
-          { name: 'Myofascial Release', desc: 'For the tension you can feel but can\'t quite touch. Slow, specific work that unlocks what nothing else has reached.', href: '/services/myofascial', tag: null },
-          { name: 'Cupping Therapy', desc: 'Lift instead of compress. Suction draws circulation into restricted areas and creates space that pressure alone cannot.', href: '/services/cupping', tag: null },
-          { name: 'Gua Sha', desc: 'Instrument-assisted fascial release that breaks down adhesions and restores tissue mobility.', href: '/services/gua-sha', tag: null },
-          { name: 'Prenatal Massage', desc: 'Therapeutic, safe, and supportive work for mothers-to-be. All products free of ingredients that could put you or your baby at risk.', href: '/services/prenatal', tag: null },
-        ].map(s => (
-          <a href={s.href} class="bg-[#1a1714] p-8 hover:bg-[#2c2318] transition-colors group block">
-            {s.tag && <span class="section-label text-[#c4a882] text-xs mb-3 block">{s.tag}</span>}
-            <h3 class="font-['Playfair_Display'] text-lg text-[#f5f0e8] mb-3 group-hover:text-[#c4a882] transition-colors">{s.name}</h3>
-            <p class="text-[#c4a882]/50 text-sm leading-relaxed">{s.desc}</p>
-            <p class="text-[#c4a882] text-xs tracking-widest uppercase mt-5">Learn more →</p>
-          </a>
-        ))}
-      </div>
-      <div class="text-center mt-10">
-        <a href="/book" class="btn-primary">Book a Session</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- OFFER SUITE -->
+  <!-- SESSION MENU -->
   <section class="py-24 px-6 bg-[#2c2318]">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-14">
         <p class="section-label mb-4">Book a Session</p>
-        <h2 class="font-['Playfair_Display'] text-4xl text-[#f5f0e8]">Choose your session.<br/><em class="text-[#c4a882]">Every one is fully integrative.</em></h2>
-        <p class="text-[#c4a882]/50 text-sm mt-4 max-w-lg mx-auto">Nikki draws from all available techniques — Ashiatsu, myofascial, cupping, gua sha — based on what your body needs that day. You book by time and goal.</p>
+        <h2 class="font-['Playfair_Display'] text-4xl text-[#f5f0e8]">You book the time.<br/><em class="text-[#c4a882]">Nikki handles the rest.</em></h2>
+        <p class="text-[#c4a882]/50 text-sm mt-4 max-w-lg mx-auto">Every session is fully integrative. Nikki reads what your body needs and draws from her full toolkit — Ashiatsu, myofascial, cupping, gua sha — accordingly. You show up. She takes it from there.</p>
       </div>
 
-      <!-- Core session menu -->
-      <div class="space-y-px bg-white/5 mb-6">
-        {[
-          { length: '60 min', price: '$100', desc: 'Focused work on a specific area or maintenance between longer sessions.' },
-          { length: '75 min', price: '$125', desc: 'Primary area plus surrounding patterns. Good for targeted recovery.' },
-          { length: '90 min', price: '$150', desc: 'The recommended starting point. Enough time to assess and address the full pattern.' },
-        ].map(s => (
-          <div class="bg-[#2c2318] p-6 md:p-7 flex items-center justify-between hover:bg-[#3a2e1e] transition-colors">
-            <div>
-              <p class="font-['Playfair_Display'] text-lg text-[#f5f0e8]">{s.length} Customized Session</p>
-              <p class="text-[#c4a882]/50 text-sm mt-1">{s.desc}</p>
-            </div>
-            <div class="text-right ml-8 shrink-0">
-              <p class="font-['Playfair_Display'] text-2xl text-[#c4a882]">{s.price}</p>
-              <a href="/book" class="text-[#c4a882]/40 text-xs tracking-widest uppercase hover:text-[#c4a882] mt-1 block transition-colors">Book →</a>
-            </div>
+      <div class="space-y-px bg-white/5 mb-10">
+        <!-- 60 min -->
+        <div class="bg-[#2c2318] p-6 md:p-7 flex items-center justify-between hover:bg-[#3a2e1e] transition-colors">
+          <div>
+            <p class="font-['Playfair_Display'] text-lg text-[#f5f0e8]">60 min</p>
+            <p class="text-[#c4a882]/50 text-sm mt-1">Focused work on a specific area or maintenance between longer sessions.</p>
           </div>
-        ))}
+          <div class="text-right ml-8 shrink-0">
+            <p class="font-['Playfair_Display'] text-2xl text-[#c4a882]">$100</p>
+          </div>
+        </div>
 
-        <!-- Featured: 120-min Ashiatsu -->
+        <!-- 75 min -->
+        <div class="bg-[#2c2318] p-6 md:p-7 flex items-center justify-between hover:bg-[#3a2e1e] transition-colors">
+          <div>
+            <p class="font-['Playfair_Display'] text-lg text-[#f5f0e8]">75 min</p>
+            <p class="text-[#c4a882]/50 text-sm mt-1">Primary area plus surrounding patterns. Good for targeted recovery.</p>
+          </div>
+          <div class="text-right ml-8 shrink-0">
+            <p class="font-['Playfair_Display'] text-2xl text-[#c4a882]">$125</p>
+          </div>
+        </div>
+
+        <!-- 90 min -->
+        <div class="bg-[#2c2318] p-6 md:p-7 flex items-center justify-between hover:bg-[#3a2e1e] transition-colors">
+          <div>
+            <p class="font-['Playfair_Display'] text-lg text-[#f5f0e8]">90 min</p>
+            <p class="text-[#c4a882]/50 text-sm mt-1">Recommended starting point. Enough time to assess and address the full pattern.</p>
+          </div>
+          <div class="text-right ml-8 shrink-0">
+            <p class="font-['Playfair_Display'] text-2xl text-[#c4a882]">$150</p>
+          </div>
+        </div>
+
+        <!-- 120 min — featured -->
         <div class="bg-[#1a1714] border border-[#c4a882]/30 p-6 md:p-7 flex items-center justify-between">
           <div>
             <div class="flex items-center gap-3 mb-1">
-              <p class="font-['Playfair_Display'] text-xl text-[#f5f0e8]">120 min Customized Session</p>
+              <p class="font-['Playfair_Display'] text-xl text-[#f5f0e8]">120 min</p>
               <span class="section-label text-[#c4a882] bg-[#c4a882]/10 px-2 py-0.5">Most Popular</span>
             </div>
-            <p class="text-[#c4a882]/60 text-sm mt-1 max-w-lg">Full-body work without compromise. Best session for Ashiatsu — enough time to work the full body top to bottom, address the root pattern, and not rush a single piece of it.</p>
+            <p class="text-[#c4a882]/60 text-sm mt-1 max-w-lg">Full-body work without compromise. The session where Ashiatsu shines — enough time to work top to bottom, address the root pattern, and not rush a single piece of it.</p>
           </div>
           <div class="text-right ml-8 shrink-0">
-            <p class="font-['Playfair_Display'] text-3xl text-[#c4a882]">$200</p>
-            <a href="/book" class="btn-primary mt-3 block text-center">Book Now</a>
+            <p class="font-['Playfair_Display'] text-3xl text-[#c4a882]">$250</p>
           </div>
         </div>
       </div>
 
-      <!-- Prenatal -->
-      <div class="space-y-px bg-white/5 mb-12">
-        {[
-          { length: '60 min', price: '$100' },
-          { length: '90 min', price: '$150' },
-        ].map(s => (
-          <div class="bg-[#2c2318] p-5 flex items-center justify-between hover:bg-[#3a2e1e] transition-colors">
-            <div>
-              <p class="text-[#f5f0e8]">{s.length} Prenatal Massage</p>
-              <p class="text-[#c4a882]/40 text-xs mt-1">All products safe for mother and baby</p>
-            </div>
-            <div class="text-right">
-              <p class="font-['Playfair_Display'] text-xl text-[#c4a882]">{s.price}</p>
-              <a href="/book" class="text-[#c4a882]/40 text-xs tracking-widest uppercase hover:text-[#c4a882] mt-1 block transition-colors">Book →</a>
-            </div>
-          </div>
-        ))}
+      <div class="text-center">
+        <a href="/book" class="btn-primary">Book a Session</a>
       </div>
-
-      <!-- Premium tier + side offers -->
-      <div class="grid md:grid-cols-3 gap-6">
-
-        <!-- Body Blueprint — premium upsell -->
-        <div class="md:col-span-2 border border-[#c4a882]/20 bg-[#1a1714] p-8">
-          <p class="section-label mb-3">Premium Experience</p>
-          <h3 class="font-['Playfair_Display'] text-2xl text-[#f5f0e8] mb-3">The Body Blueprint Session™</h3>
-          <p class="text-[#c4a882]/60 text-sm leading-relaxed mb-5">For clients who want to leave with more than relief. A 20-min intake + 90-min integrative treatment + written Body Map emailed within 24hrs — fascial patterns identified, compensatory habits noted, 3–5 custom home care exercises with video links. Priority booking included.</p>
-          <div class="flex items-center justify-between">
-            <div>
-              <p class="font-['Playfair_Display'] text-3xl text-[#c4a882]">$295</p>
-              <p class="text-[#c4a882]/30 text-xs mt-1">vs. standard 90-min at $150</p>
-            </div>
-            <a href="/book" class="btn-primary">Book Blueprint Session</a>
-          </div>
-        </div>
-
-        <!-- Right column: packages + gift cards -->
-        <div class="flex flex-col gap-4">
-          <div class="border border-white/10 p-6 hover:border-[#c4a882]/20 transition-colors flex-1">
-            <p class="section-label mb-2">Session Packages</p>
-            <p class="font-['Playfair_Display'] text-lg text-[#f5f0e8] mb-2">Commit. Save. Progress.</p>
-            <p class="text-[#c4a882]/50 text-xs leading-relaxed mb-4">3-pack or 5-pack prepaid at a preferred rate. Best for active training or working through a pattern.</p>
-            <a href="/book" class="text-[#c4a882] text-xs tracking-widest uppercase hover:text-[#d4bc9a]">View Packages →</a>
-          </div>
-          <div class="border border-white/10 p-6 hover:border-[#c4a882]/20 transition-colors flex-1">
-            <p class="section-label mb-2">Gift Cards</p>
-            <p class="font-['Playfair_Display'] text-lg text-[#f5f0e8] mb-2">Give the work.</p>
-            <p class="text-[#c4a882]/50 text-xs leading-relaxed mb-4">Any session type or dollar amount. The kind of gift people actually use.</p>
-            <a href="/book" class="text-[#c4a882] text-xs tracking-widest uppercase hover:text-[#d4bc9a]">Buy a Gift Card →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO I WORK WITH teaser -->
-  <section class="py-20 px-6 bg-[#1a1714]">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-px bg-white/5">
-      <a href="/work-with-me#athletes" class="bg-[#1a1714] p-10 hover:bg-[#2c2318] transition-colors group">
-        <p class="section-label mb-4">For Athletes & Active People</p>
-        <h3 class="font-['Playfair_Display'] text-2xl text-[#f5f0e8] mb-4 group-hover:text-[#c4a882] transition-colors">For people who use their body hard and need it to work.</h3>
-        <p class="text-[#c4a882]/50 text-sm leading-relaxed mb-6">Trail runners. Cyclists. Gym athletes. Yoga practitioners. The work I do isn't recovery in the spa sense — it's understanding what your training is doing to your tissue.</p>
-        <p class="text-[#c4a882] text-xs tracking-widest uppercase">Learn More →</p>
-      </a>
-      <a href="/work-with-me#chronic-pain" class="bg-[#1a1714] p-10 hover:bg-[#2c2318] transition-colors group">
-        <p class="section-label mb-4">For Chronic Pain & Recovery</p>
-        <h3 class="font-['Playfair_Display'] text-2xl text-[#f5f0e8] mb-4 group-hover:text-[#c4a882] transition-colors">For people who have tried everything else and are tired of managing it.</h3>
-        <p class="text-[#c4a882]/50 text-sm leading-relaxed mb-6">You know the pattern. Something hurts. You stretch it, ice it, see the chiropractor. It gets better for a while. Then you're back. The reason it keeps coming back is usually that the root cause hasn't been found yet.</p>
-        <p class="text-[#c4a882] text-xs tracking-widest uppercase">Learn More →</p>
-      </a>
     </div>
   </section>
 
@@ -303,9 +219,6 @@ import Layout from '../layouts/Layout.astro';
             <p class="text-[#c4a882]/50 text-xs tracking-widest uppercase">{r.name}</p>
           </div>
         ))}
-      </div>
-      <div class="text-center mt-10">
-        <a href="/reviews" class="btn-outline">See All Reviews</a>
       </div>
     </div>
   </section>
