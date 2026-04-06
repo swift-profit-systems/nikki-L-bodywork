@@ -36,8 +36,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Nav -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-[#162040]/95 backdrop-blur-sm border-b border-white/5">
       <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+        <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <img src="/images/nikki-logo.png" alt="Nikki Leonardi Bodywork" class="h-10 w-auto" />
+          <span class="font-['Playfair_Display'] text-base text-[#f0f4ff] tracking-wide hidden sm:block">Nikki Leonardi Bodywork</span>
         </a>
         <!-- Desktop nav -->
         <div class="hidden md:flex items-center gap-8">
@@ -103,9 +104,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       toggle?.addEventListener('click', () => menu?.classList.toggle('hidden'));
     </script>
 
-    <!-- Sticky mobile book button -->
-    <div class="fixed bottom-0 left-0 right-0 md:hidden z-50 p-4 bg-[#162040]/95 backdrop-blur-sm border-t border-white/10">
-      <a href="/book" class="btn-primary w-full text-center block">Book a Session</a>
-    </div>
+
   </body>
 </html>
