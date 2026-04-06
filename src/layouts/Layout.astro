@@ -27,37 +27,37 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#1a1714" />
+    <meta name="theme-color" content="#162040" />
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
     <!-- Nav -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#1a1714]/95 backdrop-blur-sm border-b border-white/5">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#162040]/95 backdrop-blur-sm border-b border-white/5">
       <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="/" class="font-['Playfair_Display'] text-lg text-[#f5f0e8] tracking-wide hover:text-[#c4a882] transition-colors">
+        <a href="/" class="font-['Playfair_Display'] text-lg text-[#f0f4ff] tracking-wide hover:text-[#c8a84b] transition-colors">
           Nikki Leonardi Bodywork
         </a>
         <!-- Desktop nav -->
         <div class="hidden md:flex items-center gap-8">
-          <a href="/" class="text-sm text-[#c4a882]/80 hover:text-[#c4a882] tracking-widest uppercase" style="font-size:0.7rem;letter-spacing:0.15em;">Home</a>
-          <a href="/about" class="text-sm text-[#c4a882]/80 hover:text-[#c4a882] tracking-widest uppercase" style="font-size:0.7rem;letter-spacing:0.15em;">Meet Nikki</a>
-          <a href="/tools" class="text-sm text-[#c4a882]/80 hover:text-[#c4a882] tracking-widest uppercase" style="font-size:0.7rem;letter-spacing:0.15em;">Tools of the Trade</a>
+          <a href="/" class="text-sm text-[#c8a84b]/80 hover:text-[#c8a84b] tracking-widest uppercase" style="font-size:0.7rem;letter-spacing:0.15em;">Home</a>
+          <a href="/about" class="text-sm text-[#c8a84b]/80 hover:text-[#c8a84b] tracking-widest uppercase" style="font-size:0.7rem;letter-spacing:0.15em;">Meet Nikki</a>
+          <a href="/tools" class="text-sm text-[#c8a84b]/80 hover:text-[#c8a84b] tracking-widest uppercase" style="font-size:0.7rem;letter-spacing:0.15em;">Tools of the Trade</a>
           <a href="/book" class="btn-primary ml-4">Book a Session</a>
         </div>
         <!-- Mobile menu button -->
-        <button id="menu-toggle" class="md:hidden text-[#c4a882]" aria-label="Open menu">
+        <button id="menu-toggle" class="md:hidden text-[#c8a84b]" aria-label="Open menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path d="M3 6h18M3 12h18M3 18h18"/>
           </svg>
         </button>
       </div>
       <!-- Mobile menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-[#1a1714] border-t border-white/5 px-6 py-6 flex flex-col gap-5">
-        <a href="/" class="text-[#c4a882]/80 hover:text-[#c4a882] uppercase tracking-widest" style="font-size:0.75rem;">Home</a>
-        <a href="/about" class="text-[#c4a882]/80 hover:text-[#c4a882] uppercase tracking-widest" style="font-size:0.75rem;">Meet Nikki</a>
-        <a href="/tools" class="text-[#c4a882]/80 hover:text-[#c4a882] uppercase tracking-widest" style="font-size:0.75rem;">Tools of the Trade</a>
+      <div id="mobile-menu" class="hidden md:hidden bg-[#162040] border-t border-white/5 px-6 py-6 flex flex-col gap-5">
+        <a href="/" class="text-[#c8a84b]/80 hover:text-[#c8a84b] uppercase tracking-widest" style="font-size:0.75rem;">Home</a>
+        <a href="/about" class="text-[#c8a84b]/80 hover:text-[#c8a84b] uppercase tracking-widest" style="font-size:0.75rem;">Meet Nikki</a>
+        <a href="/tools" class="text-[#c8a84b]/80 hover:text-[#c8a84b] uppercase tracking-widest" style="font-size:0.75rem;">Tools of the Trade</a>
         <a href="/book" class="btn-primary w-full text-center mt-2">Book a Session</a>
       </div>
     </nav>
@@ -67,32 +67,32 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#100e0c] border-t border-white/5 py-16 px-6">
+    <footer class="bg-[#0d1428] border-t border-white/5 py-16 px-6">
       <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
         <div>
-          <p class="font-['Playfair_Display'] text-lg text-[#f5f0e8] mb-3">Nikki Leonardi Bodywork</p>
-          <p class="text-[#c4a882]/60 text-sm leading-relaxed">Therapeutic massage for people who take their body seriously.</p>
-          <p class="text-[#c4a882]/40 text-xs mt-4">Traverse City, MI</p>
+          <p class="font-['Playfair_Display'] text-lg text-[#f0f4ff] mb-3">Nikki Leonardi Bodywork</p>
+          <p class="text-[#c8a84b]/60 text-sm leading-relaxed">Therapeutic massage for people who take their body seriously.</p>
+          <p class="text-[#c8a84b]/40 text-xs mt-4">Traverse City, MI</p>
         </div>
         <div>
           <p class="section-label mb-5">Navigate</p>
           <div class="flex flex-col gap-3">
-            <a href="/" class="text-[#c4a882]/60 hover:text-[#c4a882] text-sm transition-colors">Home</a>
-            <a href="/about" class="text-[#c4a882]/60 hover:text-[#c4a882] text-sm transition-colors">Meet Nikki</a>
-            <a href="/tools" class="text-[#c4a882]/60 hover:text-[#c4a882] text-sm transition-colors">Tools of the Trade</a>
-            <a href="/book" class="text-[#c4a882]/60 hover:text-[#c4a882] text-sm transition-colors">Book</a>
+            <a href="/" class="text-[#c8a84b]/60 hover:text-[#c8a84b] text-sm transition-colors">Home</a>
+            <a href="/about" class="text-[#c8a84b]/60 hover:text-[#c8a84b] text-sm transition-colors">Meet Nikki</a>
+            <a href="/tools" class="text-[#c8a84b]/60 hover:text-[#c8a84b] text-sm transition-colors">Tools of the Trade</a>
+            <a href="/book" class="text-[#c8a84b]/60 hover:text-[#c8a84b] text-sm transition-colors">Book</a>
           </div>
         </div>
         <div>
           <p class="section-label mb-5">Find Me</p>
-          <p class="text-[#c4a882]/60 text-sm mb-2">10691 E Carter Rd</p>
-          <p class="text-[#c4a882]/60 text-sm mb-5">Traverse City, MI 49684</p>
-          <a href="tel:2315905566" class="text-[#c4a882]/60 hover:text-[#c4a882] text-sm transition-colors block mb-2">231-590-5566</a>
+          <p class="text-[#c8a84b]/60 text-sm mb-2">10691 E Carter Rd</p>
+          <p class="text-[#c8a84b]/60 text-sm mb-5">Traverse City, MI 49684</p>
+          <a href="tel:2315905566" class="text-[#c8a84b]/60 hover:text-[#c8a84b] text-sm transition-colors block mb-2">231-590-5566</a>
           <a href="/book" class="btn-primary mt-6 block text-center">Book a Session</a>
         </div>
       </div>
       <div class="max-w-6xl mx-auto mt-12 pt-8 border-t border-white/5 text-center">
-        <p class="text-[#c4a882]/30 text-xs">© 2026 Nikki Leonardi Bodywork. All rights reserved.</p>
+        <p class="text-[#c8a84b]/30 text-xs">© 2026 Nikki Leonardi Bodywork. All rights reserved.</p>
       </div>
     </footer>
 
@@ -104,7 +104,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </script>
 
     <!-- Sticky mobile book button -->
-    <div class="fixed bottom-0 left-0 right-0 md:hidden z-50 p-4 bg-[#1a1714]/95 backdrop-blur-sm border-t border-white/10">
+    <div class="fixed bottom-0 left-0 right-0 md:hidden z-50 p-4 bg-[#162040]/95 backdrop-blur-sm border-t border-white/10">
       <a href="/book" class="btn-primary w-full text-center block">Book a Session</a>
     </div>
   </body>
