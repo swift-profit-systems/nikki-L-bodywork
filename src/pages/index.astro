@@ -2,10 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Nikki Leonardi Bodywork | Therapeutic Massage Traverse City MI" description="Therapeutic massage in Traverse City, MI. Nikki Leonardi — Ashiatsu, myofascial release, cupping, and more. 13 years. 5.0 on Google. Book online.">
+<Layout
+  title="Nikki Leonardi Bodywork | Therapeutic Massage Traverse City MI"
+  description="Therapeutic massage in Traverse City, MI. Ashiatsu barefoot massage, deep tissue, myofascial release. The deepest work in Northern Michigan."
+  showStickyBook={true}
+>
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+  <section id="hero-section" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
     <!-- Background image -->
     <div class="absolute inset-0 z-0">
       <img src="/images/studio.png" alt="Nikki Leonardi Bodywork studio" class="w-full h-full object-cover opacity-25" />
@@ -19,13 +23,14 @@ import Layout from '../layouts/Layout.astro';
           <em class="text-[#c8a84b]">work</em> in<br/>
           Traverse City.
         </h1>
-        <p class="text-[#c8a84b]/70 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-          Your body has been compensating for something.<br/>
-          Nikki finds it — and works it out.
+        <!-- HEADLINE VARIANT A: "You've been told 'that's as deep as I can go' for the last time." -->
+        <!-- HEADLINE VARIANT B: "The massage your chiropractor wishes existed." -->
+        <p class="text-[rgba(240,244,255,0.75)] text-base md:text-lg leading-relaxed mb-10 max-w-xl font-['Inter'] font-light">
+          If you've spent years asking for deeper and never finding it, stop looking.
         </p>
         <div class="flex flex-wrap gap-4 mb-16">
           <a href="/book" class="btn-primary">Book a Session</a>
-          <a href="/about" class="btn-outline">Meet Nikki</a>
+          <a href="/about" class="text-[#c8a84b]/70 hover:text-[#c8a84b] text-xs tracking-widest uppercase border-b border-[#c8a84b]/30 hover:border-[#c8a84b]/70 pb-0.5 self-center transition-colors">Meet Nikki</a>
         </div>
         <!-- Credibility bar -->
         <div class="flex flex-wrap gap-8 border-t border-white/10 pt-8">
@@ -57,7 +62,7 @@ import Layout from '../layouts/Layout.astro';
   <section class="bg-[#0d1428] py-20 px-6">
     <div class="max-w-4xl mx-auto text-center">
       <p class="font-['Playfair_Display'] text-2xl md:text-4xl text-[#f0f4ff] leading-relaxed italic mb-8">
-        "I told my chiropractor about Nikki and she said 'I have to meet this Nikki — she has fixed 3 of my patients over the last year.'"
+        "My chiropractor asked who finally fixed my back. When I told her, she said, 'I need to send more patients to Nikki.'"
       </p>
       <div class="gold-line"></div>
       <p class="text-[#c8a84b]/60 text-sm tracking-widest uppercase mt-4">— Adam, Google Review</p>
@@ -69,7 +74,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-6xl mx-auto">
       <div class="grid md:grid-cols-2 gap-6 items-center">
         <div>
-          <p class="section-label mb-4">What You'll Feel</p>
+          <p class="section-label mb-4">Why people drive an hour for this.</p>
           <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#f0f4ff] mb-6 leading-tight">
             Barefoot massage.<br/><em class="text-[#c8a84b]">Like two people<br/>working on you.</em>
           </h2>
@@ -134,7 +139,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-4">
         <p class="section-label mb-4">Book a Session</p>
-        <h2 class="font-['Playfair_Display'] text-4xl text-[#f0f4ff]">You book the time.<br/><em class="text-[#c8a84b]">Nikki handles the rest.</em></h2>
+        <h2 class="font-['Playfair_Display'] text-4xl text-[#f0f4ff]">You pick the time.<br/><em class="text-[#c8a84b]">Nikki handles everything else.</em></h2>
         <p class="text-[#c8a84b]/50 text-sm mt-4 max-w-lg mx-auto">Every session is fully integrative. Nikki reads what your body needs and draws from her full toolkit — Ashiatsu, myofascial, cupping, gua sha — accordingly. You show up. She takes it from there.</p>
         <a href="/tools" class="inline-block mt-4 text-[#c8a84b]/60 hover:text-[#c8a84b] text-xs tracking-widest uppercase transition-colors border-b border-[#c8a84b]/20 hover:border-[#c8a84b]/60 pb-0.5">Learn more about the tools →</a>
       </div>
@@ -160,6 +165,13 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </a>
+
+      <!-- First-visit reassurance — below 120 min card -->
+      <div class="mb-3 px-5 py-4 bg-[#162040]/50 border border-white/5">
+        <p class="text-[#c8a84b]/60 text-xs leading-relaxed font-['Inter']">
+          First time trying Ashiatsu? Nikki checks in early in the session to dial the pressure to exactly where you want it. Every session is tailored to what your body needs that day.
+        </p>
+      </div>
 
       <!-- Remaining sessions -->
       <div class="space-y-px bg-white/5 mb-3">

@@ -5,12 +5,14 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  showStickyBook?: boolean;
 }
 
 const {
   title,
   description = "Nikki Leonardi Bodywork — Traverse City's premier therapeutic massage specialist. Ashiatsu barefoot massage, myofascial release, deep tissue, cupping, and gua sha. 13 years. 5.0 stars.",
-  ogImage = '/images/studio.png'
+  ogImage = '/images/studio.png',
+  showStickyBook = false
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -31,6 +33,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body>
     <!-- Nav -->
@@ -38,7 +43,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <img src="/images/nikki-logo.png" alt="Nikki Leonardi Bodywork" class="h-10 w-auto" />
-          <span class="font-['Playfair_Display'] text-base text-[#f0f4ff] tracking-wide hidden sm:block">Nikki Leonardi Bodywork</span>
+          <span class="font-['Inter'] text-xs text-[#f0f4ff] tracking-wide" style="font-size:0.72rem;letter-spacing:0.04em;">Nikki Leonardi Bodywork</span>
         </a>
         <!-- Desktop nav -->
         <div class="hidden md:flex items-center gap-8">
@@ -68,7 +73,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#0d1428] border-t border-white/5 py-16 px-6">
+    <footer id="site-footer" class="bg-[#0d1428] border-t border-white/5 py-16 px-6">
       <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
         <div>
           <img src="/images/nikki-logo.png" alt="Nikki Leonardi Bodywork" class="h-16 w-auto mb-3" />
@@ -97,6 +102,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </div>
     </footer>
 
+    <!-- Sticky mobile Book button (shown on Homepage, Tools, About — not on /book) -->
+    {showStickyBook && (
+      <div
+        id="sticky-book-btn"
+        class="fixed bottom-0 left-0 right-0 z-40 md:hidden px-4 pb-4 pt-2 opacity-0 pointer-events-none transition-opacity duration-300"
+        style="box-shadow: 0 -4px 20px rgba(0,0,0,0.4);"
+      >
+        <a href="/book" class="block w-full text-center bg-[#C8952E] text-[#162040] font-semibold py-4 tracking-widest uppercase text-sm hover:bg-[#d4a94a] transition-colors">
+          Book a Session
+        </a>
+      </div>
+    )}
+
     <!-- Mobile menu JS -->
     <script>
       const toggle = document.getElementById('menu-toggle');
@@ -104,6 +122,36 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       toggle?.addEventListener('click', () => menu?.classList.toggle('hidden'));
     </script>
 
+    <!-- Sticky book button JS -->
+    {showStickyBook && (
+      <script>
+        const stickyBtn = document.getElementById('sticky-book-btn');
+        const footer = document.getElementById('site-footer');
 
+        if (stickyBtn && footer) {
+          let footerVisible = false;
+
+          const footerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              footerVisible = entry.isIntersecting;
+              updateStickyVisibility();
+            });
+          });
+          footerObserver.observe(footer);
+
+          function updateStickyVisibility() {
+            if (window.scrollY > 300 && !footerVisible) {
+              stickyBtn.classList.remove('opacity-0', 'pointer-events-none');
+              stickyBtn.classList.add('opacity-100');
+            } else {
+              stickyBtn.classList.add('opacity-0', 'pointer-events-none');
+              stickyBtn.classList.remove('opacity-100');
+            }
+          }
+
+          window.addEventListener('scroll', updateStickyVisibility, { passive: true });
+        }
+      </script>
+    )}
   </body>
 </html>

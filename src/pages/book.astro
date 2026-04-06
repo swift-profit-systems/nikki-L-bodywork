@@ -1,7 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Book a Session | Nikki Leonardi Bodywork Traverse City" description="Book your therapeutic massage session with Nikki Leonardi in Traverse City, MI. Online scheduling available 24/7.">
+<Layout
+  title="Book a Session | Nikki Leonardi Bodywork Traverse City"
+  description="Book a therapeutic massage session with Nikki Leonardi in Traverse City, MI. 60, 75, 90, and 120-minute sessions available."
+  showStickyBook={false}
+>
   <div class="pt-16">
     <section class="py-24 px-6 bg-[#162040]">
       <div class="max-w-4xl mx-auto">
@@ -19,8 +23,112 @@ import Layout from '../layouts/Layout.astro';
           <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
         </div>
 
+        <!-- NOTE: Acuity widget styling via Advanced CSS requires Acuity Premium/Powerhouse plan.
+             CSS to apply when available:
+             .is-embedded .btn { background: #C8952E !important; color: #fff !important; border-color: #C8952E !important; }
+             .is-embedded .select-item, .is-embedded .select-item-box { background: #f8f4ee !important; }
+             .is-embedded body, .is-embedded * { font-family: 'Inter', sans-serif !important; }
+             .powered-by { display: none; }
+        -->
+
+        <!-- FAQ Section -->
+        <div class="mt-20">
+          <h2 class="font-['Playfair_Display'] text-3xl text-[#f0f4ff] mb-10">Common Questions</h2>
+          <div class="space-y-2" id="faq-accordion">
+
+            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
+                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-sm">What should I wear?</span>
+                <span class="faq-icon text-[#c8a84b] text-lg font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+              </button>
+              <div class="faq-body hidden px-6 pb-5">
+                <p class="text-[#c8a84b]/70 text-sm leading-relaxed">Whatever is comfortable. You'll undress to your comfort level and be draped throughout the session. Most clients are in underwear or fully undressed under the sheet.</p>
+              </div>
+            </div>
+
+            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
+                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-sm">Is Ashiatsu safe? Are there contraindications?</span>
+                <span class="faq-icon text-[#c8a84b] text-lg font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+              </button>
+              <div class="faq-body hidden px-6 pb-5">
+                <p class="text-[#c8a84b]/70 text-sm leading-relaxed">Ashiatsu is safe for most people, but it's not appropriate for everyone. If you're pregnant (prenatal sessions are a separate offering), have osteoporosis, recent surgery, acute inflammation, or certain other conditions, we'll talk through it before your session. When in doubt, mention it when you book and I'll let you know.</p>
+              </div>
+            </div>
+
+            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
+                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-sm">How do I know which session length to book?</span>
+                <span class="faq-icon text-[#c8a84b] text-lg font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+              </button>
+              <div class="faq-body hidden px-6 pb-5">
+                <p class="text-[#c8a84b]/70 text-sm leading-relaxed">If it's your first visit, 90 minutes is the best starting point. It gives me enough time to assess what's going on and actually address the pattern, not just chase the pain. If you already know you want full-body, thorough work, go with 120 minutes.</p>
+              </div>
+            </div>
+
+            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
+                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-sm">What's your cancellation policy?</span>
+                <span class="faq-icon text-[#c8a84b] text-lg font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+              </button>
+              <div class="faq-body hidden px-6 pb-5">
+                <p class="text-[#c8a84b]/70 text-sm leading-relaxed">24 hours notice to cancel or reschedule. Late cancellations and no-shows are charged the full session fee. I keep my schedule intentionally small, so every slot matters.</p>
+              </div>
+            </div>
+
+            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
+                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-sm">Do you take insurance?</span>
+                <span class="faq-icon text-[#c8a84b] text-lg font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+              </button>
+              <div class="faq-body hidden px-6 pb-5">
+                <p class="text-[#c8a84b]/70 text-sm leading-relaxed">I don't bill insurance directly. I can provide a superbill (receipt with CPT codes) that you can submit to your insurance for potential reimbursement. Many HSA/FSA cards work for massage therapy as well.</p>
+              </div>
+            </div>
+
+            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
+                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-sm">What if I've never had deep tissue or Ashiatsu before?</span>
+                <span class="faq-icon text-[#c8a84b] text-lg font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+              </button>
+              <div class="faq-body hidden px-6 pb-5">
+                <p class="text-[#c8a84b]/70 text-sm leading-relaxed">Perfect. I check in with you during the session to make sure the pressure is right. Ashiatsu feels different from hand massage. Most first-timers say it's the deepest, most comfortable pressure they've ever felt. You won't be white-knuckling the table.</p>
+              </div>
+            </div>
+
+            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
+                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-sm">Is there parking?</span>
+                <span class="faq-icon text-[#c8a84b] text-lg font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+              </button>
+              <div class="faq-body hidden px-6 pb-5">
+                <p class="text-[#c8a84b]/70 text-sm leading-relaxed">Yes, there's easy parking right at the studio. 10691 E Carter Rd, Traverse City.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Email capture for non-bookers -->
+        <!-- NOTE: Connect to email tool when configured (Mailchimp, ActiveCampaign, Acuity list, etc.) -->
+        <div class="mt-16 mb-16 bg-[#1e2d52]/60 border border-white/10 px-8 py-10">
+          <h3 class="font-['Playfair_Display'] text-xl text-[#f0f4ff] mb-2">New to Ashiatsu?</h3>
+          <p class="text-[#c8a84b]/60 text-sm mb-6">Get a quick guide on what to expect at your first session.</p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md" id="guide-capture-form">
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              class="flex-1 bg-[#162040] border border-white/20 text-[#f0f4ff] px-4 py-3 text-sm font-['Inter'] placeholder:text-[#c8a84b]/30 focus:outline-none focus:border-[#c8a84b]/60"
+            />
+            <button type="submit" class="btn-primary whitespace-nowrap">Send Me the Guide</button>
+          </form>
+          <p id="guide-form-success" class="hidden text-[#c8a84b] text-sm mt-3 font-['Inter']">Got it. I'll send it over shortly.</p>
+        </div>
+
         <!-- Location & contact -->
-        <div class="grid md:grid-cols-3 gap-6 mt-12">
+        <div class="grid md:grid-cols-2 gap-6 mt-12">
           <div class="border border-white/10 p-6">
             <p class="section-label mb-3">Location</p>
             <p class="text-[#c8a84b]/70 text-sm">10691 E Carter Rd</p>
@@ -31,13 +139,49 @@ import Layout from '../layouts/Layout.astro';
             <p class="section-label mb-3">Phone</p>
             <a href="tel:2315905566" class="text-[#c8a84b]/70 text-sm hover:text-[#c8a84b] transition-colors">231-590-5566</a>
           </div>
-          <div class="border border-white/10 p-6">
-            <p class="section-label mb-3">Gift Cards</p>
-            <p class="text-[#c8a84b]/70 text-sm mb-3">Give the work. Available for any session type or dollar amount.</p>
-            <a href="#" class="text-[#c8a84b] text-xs tracking-widest uppercase hover:text-[#d4bc9a]">Buy a Gift Card →</a>
-          </div>
         </div>
       </div>
     </section>
   </div>
+
+  <!-- FAQ accordion JS -->
+  <script>
+    const triggers = document.querySelectorAll('.faq-trigger');
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item');
+        const body = item?.querySelector('.faq-body');
+        const icon = trigger.querySelector('.faq-icon');
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+        // Close all
+        document.querySelectorAll('.faq-trigger').forEach(t => {
+          t.setAttribute('aria-expanded', 'false');
+          const b = t.closest('.faq-item')?.querySelector('.faq-body');
+          const i = t.querySelector('.faq-icon');
+          b?.classList.add('hidden');
+          if (i) i.textContent = '+';
+          if (i) i.style.transform = 'rotate(0deg)';
+        });
+
+        // Open clicked if it was closed
+        if (!isOpen && body && icon) {
+          trigger.setAttribute('aria-expanded', 'true');
+          body.classList.remove('hidden');
+          icon.textContent = '+';
+          icon.style.transform = 'rotate(45deg)';
+        }
+      });
+    });
+
+    // Email capture form — placeholder handler
+    const guideForm = document.getElementById('guide-capture-form');
+    const guideSuccess = document.getElementById('guide-form-success');
+    guideForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // TODO: wire to email tool (Mailchimp/ActiveCampaign/Acuity)
+      guideForm.style.display = 'none';
+      guideSuccess?.classList.remove('hidden');
+    });
+  </script>
 </Layout>
