@@ -118,11 +118,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </div>
     )}
 
-    <!-- Mobile menu JS -->
-    <script>
-      const toggle = document.getElementById('menu-toggle');
-      const menu = document.getElementById('mobile-menu');
-      toggle?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+    <!-- Mobile menu JS: is:inline keeps Astro's script bundler from dropping it on /book (where the Acuity embed src tag perturbs hoisting). -->
+    <script is:inline>
+      (function() {
+        var toggle = document.getElementById('menu-toggle');
+        var menu = document.getElementById('mobile-menu');
+        if (!toggle || !menu) return;
+        toggle.addEventListener('click', function() { menu.classList.toggle('hidden'); });
+        // Close menu when any link inside it is tapped
+        menu.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() { menu.classList.add('hidden'); });
+        });
+      })();
     </script>
 
     <!-- Sticky book button JS -->

@@ -18,9 +18,21 @@ import Icon from '../components/Icon.astro';
         <h1 class="font-['Playfair_Display'] text-3xl md:text-5xl lg:text-6xl text-[#1A1A1A] leading-[1.1] mb-6">
           The deepest, most effective massage in Traverse City.
         </h1>
-        <p class="text-[#4A4A4A] text-lg md:text-xl leading-relaxed mb-10 max-w-xl font-['Inter']">
-          Ashiatsu specialist. 13 years. 5.0 on Google. One of a few barefoot massage therapists in Northern Michigan.
+        <p class="text-[#4A4A4A] text-lg md:text-xl leading-relaxed mb-8 max-w-xl font-['Inter']">
+          Ashiatsu specialist. One of a few barefoot massage therapists in Northern Michigan.
         </p>
+        <!-- Above-the-fold trust strip -->
+        <div class="flex items-center gap-4 md:gap-6 mb-8 flex-wrap">
+          <div class="flex items-center gap-2">
+            <Icon name="star" size={20} />
+            <span class="text-[#1A1A1A] text-xs md:text-sm tracking-widest uppercase font-medium font-['Inter']">5.0 Google Rated</span>
+          </div>
+          <div class="hidden md:block w-px h-5 bg-[#C8952E]/40"></div>
+          <div class="flex items-center gap-2">
+            <Icon name="hourglass" size={20} />
+            <span class="text-[#1A1A1A] text-xs md:text-sm tracking-widest uppercase font-medium font-['Inter']">13+ Years Practice</span>
+          </div>
+        </div>
         <div class="flex flex-wrap items-center gap-6">
           <a href="/book" class="btn-primary">Book a Session</a>
           <a href="/about" class="text-[#C8952E] hover:text-[#B8850E] text-sm tracking-widest uppercase font-medium border-b border-[#C8952E]/40 hover:border-[#C8952E] pb-0.5 transition-colors duration-200 font-['Inter']">Meet Nikki</a>
