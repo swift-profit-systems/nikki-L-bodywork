@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <Layout
@@ -8,234 +9,218 @@ import Layout from '../layouts/Layout.astro';
   showStickyBook={true}
 >
 
-  <!-- HERO -->
-  <section id="hero-section" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img src="/images/studio.webp" alt="Nikki Leonardi's massage studio in Traverse City" class="w-full h-full object-cover opacity-25" fetchpriority="high" loading="eager" />
-      <div class="absolute inset-0 bg-gradient-to-r from-[#162040] via-[#162040]/80 to-[#162040]/40"></div>
-    </div>
-    <div class="relative z-10 max-w-6xl mx-auto px-6 py-24">
-      <div class="max-w-2xl">
+  <!-- HERO: split layout -->
+  <section id="hero-section" class="bg-white pt-16">
+    <div class="grid md:grid-cols-[55fr_45fr] md:min-h-[700px]">
+      <!-- Text column (above photo on mobile) -->
+      <div class="flex flex-col justify-center py-16 px-6 md:py-24 md:px-12 lg:px-16">
         <p class="section-label mb-6">Traverse City, Michigan</p>
-        <h1 class="font-['Playfair_Display'] text-5xl md:text-7xl text-[#f0f4ff] leading-[1.05] mb-6">
-          The deepest<br/>
-          <em class="text-[#c8a84b]">work</em> in<br/>
-          Traverse City.
+        <h1 class="font-['Playfair_Display'] text-3xl md:text-5xl lg:text-6xl text-[#1A1A1A] leading-[1.1] mb-6">
+          The deepest, most effective massage in Traverse City.
         </h1>
-        <!-- HEADLINE VARIANT A: "You've been told 'that's as deep as I can go' for the last time." -->
-        <!-- HEADLINE VARIANT B: "The massage your chiropractor wishes existed." -->
-        <p class="text-[rgba(240,244,255,0.75)] text-base md:text-lg leading-relaxed mb-10 max-w-xl font-['Inter'] font-light">
-          If you've spent years asking for deeper and never finding it, stop looking.
+        <p class="text-[#4A4A4A] text-lg md:text-xl leading-relaxed mb-10 max-w-xl font-['Inter']">
+          Ashiatsu specialist. 13 years. 5.0 on Google. One of a few barefoot massage therapists in Northern Michigan.
         </p>
-        <div class="flex flex-wrap gap-4 mb-16">
-          <a href="/book" class="btn-primary shadow-md shadow-[#c8a84b]/20 hover:shadow-lg hover:shadow-[#c8a84b]/30 hover:scale-[1.02] transition-all duration-200">Book a Session</a>
-          <a href="/about" class="text-[#c8a84b]/80 hover:text-[#c8a84b] text-xs tracking-widest uppercase border-b border-[#c8a84b]/30 hover:border-[#c8a84b]/70 pb-0.5 self-center transition-colors duration-200 font-['Inter']">Meet Nikki</a>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="/book" class="btn-primary">Book a Session</a>
+          <a href="/about" class="text-[#C8952E] hover:text-[#B8850E] text-sm tracking-widest uppercase font-medium border-b border-[#C8952E]/40 hover:border-[#C8952E] pb-0.5 transition-colors duration-200 font-['Inter']">Meet Nikki</a>
         </div>
-        <!-- Credibility bar -->
-        <div class="flex flex-wrap gap-4 border-t border-white/10 pt-8">
-          {[
-            { stat: '5.0', label: 'Google Stars' },
-            { stat: '22', label: 'Reviews' },
-            { stat: '13+', label: 'Years Practice' },
-            { stat: '1 of few', label: 'Ashiatsu in N. Michigan' },
-          ].map(s => (
-            <div class="bg-[#162040]/50 border border-[#c8a84b]/10 rounded-lg p-6 hover:border-[#c8a84b]/25 hover:bg-[#162040]/70 transition-all duration-300 cursor-default">
-              <p class="font-['Playfair_Display'] text-3xl text-[#c8a84b]">{s.stat}</p>
-              <p class="text-[#c8a84b]/50 text-xs tracking-widest uppercase mt-1">{s.label}</p>
-            </div>
-          ))}
-        </div>
+      </div>
+      <!-- Photo column (below text on mobile) -->
+      <div class="w-full h-[300px] md:h-auto px-6 pb-12 md:p-8 lg:p-12 md:pl-0 lg:pl-0">
+        <img
+          src="/studio-interior.webp"
+          alt="Nikki Leonardi's studio in Traverse City, Ashiatsu bars and massage table"
+          class="w-full h-full object-cover rounded-2xl shadow-lg border border-[#E8E0D4]"
+          fetchpriority="high"
+          loading="eager"
+          width="1600"
+          height="1200"
+        />
       </div>
     </div>
   </section>
 
-  <!-- SECTION DIVIDER -->
-  <div class="bg-[#0d1428] py-2"><div class="max-w-6xl mx-auto px-6"><div class="h-[1px] bg-gradient-to-r from-transparent via-[#c8a84b]/15 to-transparent"></div></div></div>
-
-  <!-- FEATURED REVIEW — Shelley Fox (real Google review) -->
-  <section class="bg-[#0d1428] py-20 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="font-['Playfair_Display'] text-2xl md:text-4xl text-[#f0f4ff] leading-relaxed italic mb-8">
-        "BEST MASSAGE OF MY 63 YEARS! If deep tissue massage is your thing… you need to see her."
-      </p>
-      <div class="gold-line mx-auto"></div>
-      <p class="text-[#c8a84b]/80 text-sm tracking-widest uppercase mt-4">— Shelley Fox, Google Review</p>
+  <!-- STAT CARDS -->
+  <section class="bg-[#FAF8F5] py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {[
+          { stat: '5.0', label: 'Google Stars', icon: 'star' as const },
+          { stat: '22', label: 'Reviews', icon: 'speech' as const },
+          { stat: '13+', label: 'Years Practice', icon: 'hourglass' as const },
+          { stat: '1 of few', label: 'Ashiatsu in N. Michigan', icon: 'ashi-bars' as const },
+        ].map(s => (
+          <div class="bg-white border border-[#E8E0D4] rounded-lg p-6 shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200 flex flex-col items-center text-center">
+            <Icon name={s.icon} size={32} class="mb-4" />
+            <p class="font-['Playfair_Display'] text-3xl md:text-4xl text-[#C8952E]">{s.stat}</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mt-2">{s.label}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- SECTION DIVIDER -->
-  <div class="bg-[#162040] py-2"><div class="max-w-6xl mx-auto px-6"><div class="h-[1px] bg-gradient-to-r from-transparent via-[#c8a84b]/15 to-transparent"></div></div></div>
+  <!-- FEATURED QUOTE: Shelley Fox (real Google review) -->
+  <section class="bg-[#5B8FA8] py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="font-['Playfair_Display'] text-2xl md:text-4xl text-white leading-relaxed italic mb-8">
+        "BEST MASSAGE OF MY 63 YEARS! If deep tissue massage is your thing… you need to see her."
+      </p>
+      <div class="w-12 h-px bg-white/40 mx-auto"></div>
+      <p class="text-white/80 text-sm tracking-widest uppercase mt-4">— Shelley Fox, Google Review</p>
+    </div>
+  </section>
 
   <!-- ASHIATSU IN ACTION -->
-  <section class="py-20 px-6 bg-[#162040]">
+  <section class="py-20 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-6 items-center">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <p class="section-label mb-4">Why people drive an hour for this.</p>
-          <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#f0f4ff] mb-6 leading-tight">
-            Barefoot massage.<br/><em class="text-[#c8a84b]">Like two people<br/>working on you.</em>
+          <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#1A1A1A] mb-6 leading-tight">
+            Barefoot massage.<br/><em class="text-[#C8952E]">Like two people working on you.</em>
           </h2>
-          <p class="text-[#c8a84b]/85 leading-relaxed mb-6">
+          <p class="text-[#4A4A4A] text-lg leading-relaxed mb-6">
             Ashiatsu is massage performed with the feet, supported by overhead bars, delivering sustained, consistent pressure that hands simply cannot replicate. If you've spent years asking for deeper and never finding it, this is what you've been looking for.
           </p>
-          <p class="text-[#c8a84b]/50 text-sm leading-relaxed mb-8 italic">
+          <p class="text-[#c8a84b] text-base leading-relaxed mb-8 italic">
             "The deepest most comfortable pressure ever. 1st time doing this type of massage and I can't wait for my next one." — Matt Schram
           </p>
           <a href="/tools" class="btn-primary">Learn About Ashiatsu</a>
         </div>
         <div class="grid grid-cols-2 gap-3">
-          <img src="/images/ashiatsu-1.webp" alt="Ashiatsu barefoot massage in practice" class="w-full h-64 object-cover object-top" />
-          <img src="/images/ashiatsu-2.webp" alt="Ashiatsu deep tissue barefoot work" class="w-full h-64 object-cover object-top mt-6" />
-          <img src="/images/ashiatsu-3.webp" alt="Nikki Leonardi barefoot massage technique" class="w-full h-64 object-cover col-span-2" />
+          <img src="/images/ashiatsu-1.webp" alt="Ashiatsu barefoot massage in practice" class="w-full h-64 object-cover object-top rounded-lg shadow-md" />
+          <img src="/images/ashiatsu-2.webp" alt="Ashiatsu deep tissue barefoot work" class="w-full h-64 object-cover object-top mt-6 rounded-lg shadow-md" />
+          <img src="/images/ashiatsu-3.webp" alt="Nikki Leonardi barefoot massage technique" class="w-full h-64 object-cover col-span-2 rounded-lg shadow-md" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION DIVIDER -->
-  <div class="bg-[#0d1428] py-2"><div class="max-w-6xl mx-auto px-6"><div class="h-[1px] bg-gradient-to-r from-transparent via-[#c8a84b]/15 to-transparent"></div></div></div>
-
   <!-- THREE DIFFERENTIATORS -->
-  <section class="py-20 px-6 bg-[#0d1428]">
+  <section class="py-20 px-6 bg-[#FAF8F5]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <p class="section-label mb-4">What Makes This Different</p>
-        <h2 class="font-['Playfair_Display'] text-4xl text-[#f0f4ff]">Most massage treats where it hurts.<br/><em class="text-[#c8a84b]">Nikki finds out why.</em></h2>
+        <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl text-[#1A1A1A]">Most massage treats where it hurts.<br/><em class="text-[#C8952E]">Nikki finds out why.</em></h2>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Card 1 — Sasha King, LMT -->
-        <div class="bg-[#0d1428] border-t-[3px] border-t-[#c8a84b]/40 border border-white/10 p-8 shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-[#c8a84b]/5 hover:border-t-[#c8a84b]/60 transition-all duration-300">
-          <h3 class="font-['Playfair_Display'] text-xl text-[#f0f4ff] mb-4">She reads the body, not just the complaint</h3>
-          <p class="text-[#c8a84b]/80 text-sm leading-relaxed mb-5">
+        <!-- Card 1 -->
+        <div class="bg-white border-t-[3px] border-t-[#C8952E] border border-[#E8E0D4] rounded-lg p-8 shadow-md hover:shadow-lg hover:border-[#c8a84b]/30 transition-all duration-200">
+          <h3 class="font-['Playfair_Display'] text-xl md:text-2xl text-[#1A1A1A] mb-4">She reads the body, not just the complaint</h3>
+          <p class="text-[#4A4A4A] text-lg leading-relaxed mb-5">
             Every session is a diagnostic conversation. Nikki looks for the fascial restriction, the structural imbalance, the compensatory pattern. Not just the place that hurts.
           </p>
-          <p class="text-[#c8a84b]/50 text-sm italic">"She worked my whole body, which most therapists don't. She was very intuitive the whole time." — Sasha King, LMT</p>
+          <p class="text-[#c8a84b] text-sm italic leading-relaxed">"She worked my whole body, which most therapists don't. She was very intuitive the whole time." — Sasha King, LMT</p>
         </div>
-        <!-- Card 2 — Tracy Northey -->
-        <div class="bg-[#0d1428] border-t-[3px] border-t-[#c8a84b]/40 border border-white/10 p-8 shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-[#c8a84b]/5 hover:border-t-[#c8a84b]/60 transition-all duration-300">
-          <h3 class="font-['Playfair_Display'] text-xl text-[#f0f4ff] mb-4">The deepest pressure you've ever felt</h3>
-          <p class="text-[#c8a84b]/80 text-sm leading-relaxed mb-5">
-            Ashiatsu barefoot massage delivers sustained, consistent pressure that hands cannot replicate. If you've never been able to find "deep enough," this is what you've been looking for.
+        <!-- Card 2: with added Ashiatsu sentence -->
+        <div class="bg-white border-t-[3px] border-t-[#C8952E] border border-[#E8E0D4] rounded-lg p-8 shadow-md hover:shadow-lg hover:border-[#c8a84b]/30 transition-all duration-200">
+          <h3 class="font-['Playfair_Display'] text-xl md:text-2xl text-[#1A1A1A] mb-4">The deepest pressure you've ever felt</h3>
+          <p class="text-[#4A4A4A] text-lg leading-relaxed mb-5">
+            Ashiatsu barefoot massage delivers sustained, consistent pressure that hands cannot replicate. If you've never been able to find "deep enough," this is what you've been looking for. Deeper, more consistent pressure, tolerated by the body in a completely different way than fingers, which can be jarring or even inflammatory to the muscles.
           </p>
-          <p class="text-[#c8a84b]/50 text-sm italic">"If you like deep tissue massage, Nikki is your girl. I leave there feeling awesome." — Tracy Northey</p>
+          <p class="text-[#c8a84b] text-sm italic leading-relaxed">"If you like deep tissue massage, Nikki is your girl. I leave there feeling awesome." — Tracy Northey</p>
         </div>
-        <!-- Card 3 — Michelle Mitchell -->
-        <div class="bg-[#0d1428] border-t-[3px] border-t-[#c8a84b]/40 border border-white/10 p-8 shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-[#c8a84b]/5 hover:border-t-[#c8a84b]/60 transition-all duration-300">
-          <h3 class="font-['Playfair_Display'] text-xl text-[#f0f4ff] mb-4">Results that last</h3>
-          <p class="text-[#c8a84b]/80 text-sm leading-relaxed mb-5">
+        <!-- Card 3 -->
+        <div class="bg-white border-t-[3px] border-t-[#C8952E] border border-[#E8E0D4] rounded-lg p-8 shadow-md hover:shadow-lg hover:border-[#c8a84b]/30 transition-all duration-200">
+          <h3 class="font-['Playfair_Display'] text-xl md:text-2xl text-[#1A1A1A] mb-4">Results that last</h3>
+          <p class="text-[#4A4A4A] text-lg leading-relaxed mb-5">
             The goal is not to feel better until next week. Nikki sends every client home with customized stretches and exercises to support and extend the work done in session.
           </p>
-          <p class="text-[#c8a84b]/50 text-sm italic">"It has made a huge difference in my every day activity when seeing her on a regular basis." — Michelle Mitchell</p>
+          <p class="text-[#c8a84b] text-sm italic leading-relaxed">"It has made a huge difference in my every day activity when seeing her on a regular basis." — Michelle Mitchell</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION DIVIDER -->
-  <div class="bg-[#1e2d52] py-2"><div class="max-w-6xl mx-auto px-6"><div class="h-[1px] bg-gradient-to-r from-transparent via-[#c8a84b]/15 to-transparent"></div></div></div>
+  <!-- GUARANTEE BAND -->
+  <section class="bg-[#FAF8F5] py-10 px-6">
+    <div class="max-w-3xl mx-auto bg-white border-l-[6px] border-l-[#C8952E] border border-[#E8E0D4] rounded-r-lg shadow-md px-8 py-6 flex items-center gap-5">
+      <div class="shrink-0">
+        <Icon name="shield-check" size={40} />
+      </div>
+      <p class="text-[#1A1A1A] text-lg md:text-xl leading-relaxed font-['Inter']">
+        <strong class="text-[#C8952E] font-semibold">100% satisfaction guarantee.</strong> If you don't feel a difference after your session, you don't pay. No hassle, no questions.
+      </p>
+    </div>
+  </section>
 
   <!-- SESSION MENU -->
-  <section class="py-24 px-6 bg-[#1e2d52]">
+  <section class="py-24 px-6 bg-white">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-4">
+      <div class="text-center mb-10">
         <p class="section-label mb-4">Book a Session</p>
-        <h2 class="font-['Playfair_Display'] text-4xl text-[#f0f4ff]">You pick the time.<br/><em class="text-[#c8a84b]">Nikki handles everything else.</em></h2>
-        <p class="text-[#c8a84b]/80 text-sm mt-4 max-w-lg mx-auto">Every session is fully integrative. Nikki reads what your body needs and draws from her full toolkit: Ashiatsu, myofascial, cupping, gua sha, accordingly. You show up. She takes it from there.</p>
-        <a href="/tools" class="inline-block mt-4 text-[#c8a84b]/80 hover:text-[#c8a84b] text-xs tracking-widest uppercase transition-colors duration-200 border-b border-[#c8a84b]/20 hover:border-[#c8a84b]/60 pb-0.5">Learn more about the tools →</a>
+        <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl text-[#1A1A1A]">You pick the time.<br/><em class="text-[#C8952E]">Nikki handles everything else.</em></h2>
+        <p class="text-[#4A4A4A] text-lg mt-4 max-w-2xl mx-auto leading-relaxed">Every session is fully integrative. Nikki reads what your body needs and draws from her full toolkit: Ashiatsu, myofascial, cupping, gua sha, accordingly. You show up. She takes it from there.</p>
+        <a href="/tools" class="inline-block mt-4 text-[#C8952E] hover:text-[#B8850E] text-sm tracking-widest uppercase font-medium transition-colors duration-200 border-b border-[#C8952E]/40 hover:border-[#C8952E] pb-0.5">Learn more about the tools →</a>
       </div>
 
-      <div class="my-10 border-t border-white/10"></div>
-
-      <!-- 120 min — hero card -->
-      <a href="/book" class="block mb-3 group">
-        <div class="relative bg-gradient-to-br from-[#162040] to-[#0d1428] border border-[#c8a84b]/20 shadow-xl shadow-[#c8a84b]/5 hover:border-[#c8a84b]/50 transition-all duration-300 p-7 md:p-9">
-          <div class="absolute top-0 left-0 w-1 h-full bg-[#c8a84b]"></div>
+      <!-- 120 min hero card -->
+      <a href="/book" class="block mb-4 group">
+        <div class="relative bg-gradient-to-br from-white to-[#FAF8F5] border border-[#E8E0D4] rounded-lg shadow-md hover:shadow-lg hover:border-[#c8a84b]/40 transition-all duration-200 p-7 md:p-9">
+          <div class="absolute top-0 left-0 w-1 h-full bg-[#C8952E] rounded-l-lg"></div>
           <div class="pl-4">
-            <div class="flex flex-wrap items-center gap-3 mb-2">
-              <p class="font-['Playfair_Display'] text-2xl md:text-3xl text-[#f0f4ff] group-hover:text-[#c8a84b] transition-colors duration-200">120 min Customized Session</p>
-              <span class="text-[#c8a84b] bg-[#c8a84b]/15 border border-[#c8a84b]/30 px-3 py-1 rounded-full text-xs uppercase tracking-widest font-['Inter']">Most Popular</span>
+            <div class="flex flex-wrap items-center gap-3 mb-3">
+              <p class="font-['Playfair_Display'] text-2xl md:text-3xl text-[#1A1A1A] group-hover:text-[#C8952E] transition-colors duration-200">120 min Customized Session</p>
+              <span class="text-[#C8952E] bg-[#C8952E]/10 border border-[#C8952E]/30 px-3 py-1 rounded-full text-xs uppercase tracking-widest font-['Inter'] font-medium">Most Popular</span>
             </div>
-            <p class="text-[#c8a84b]/85 text-sm leading-relaxed max-w-xl mb-5">Full-body work without compromise. The session where Ashiatsu shines: enough time to work top to bottom, address the root pattern, and not rush a single piece of it.</p>
+            <p class="text-[#4A4A4A] text-lg leading-relaxed max-w-2xl mb-5">Full-body work without compromise. The session where Ashiatsu shines: enough time to work top to bottom, address the root pattern, and not rush a single piece of it.</p>
             <div class="flex items-center justify-between flex-wrap gap-4">
-              <p class="font-['Playfair_Display'] text-4xl text-[#c8a84b]">$250</p>
-              <span class="text-[#c8a84b] text-xs tracking-widest uppercase border border-[#c8a84b]/40 px-4 py-2 group-hover:bg-[#c8a84b]/10 transition-colors duration-200 cursor-pointer">Book This Session →</span>
+              <p class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#C8952E]">$250</p>
+              <span class="text-white bg-[#C8952E] border-2 border-[#C8952E] rounded-lg px-6 py-3 text-sm tracking-widest uppercase font-semibold shadow-md group-hover:bg-[#B8850E] group-hover:border-[#B8850E] transition-colors duration-200">Book This Session →</span>
             </div>
           </div>
         </div>
       </a>
 
-      <!-- First-visit reassurance -->
-      <div class="mb-1 bg-[#162040]/30 rounded-lg px-6 py-4 border-l-[3px] border-l-[#c8a84b]/30">
-        <p class="text-[#c8a84b]/80 text-xs leading-relaxed font-['Inter']">
+      <!-- Other session lengths as cards -->
+      <div class="space-y-3 mb-3 mt-4">
+        {[
+          { label: '90 min Customized Session', price: '$175', desc: 'Recommended starting point. Enough time to assess and address the full pattern.' },
+          { label: '75 min Customized Session', price: '$150', desc: 'Primary area plus surrounding patterns. Good for targeted recovery.' },
+          { label: '60 min Customized Session', price: '$125', desc: 'Focused work on a specific area or maintenance between longer sessions.' },
+        ].map(s => (
+          <a href="/book" class="block group">
+            <div class="bg-white border border-[#E8E0D4] rounded-lg p-5 md:p-6 flex items-center justify-between shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+              <div>
+                <p class="font-['Playfair_Display'] text-xl md:text-2xl text-[#1A1A1A] group-hover:text-[#C8952E] transition-colors duration-200">{s.label}</p>
+                <p class="text-[#4A4A4A] text-base mt-1">{s.desc}</p>
+              </div>
+              <div class="text-right ml-6 shrink-0">
+                <p class="font-['Playfair_Display'] text-2xl md:text-3xl text-[#C8952E]">{s.price}</p>
+                <p class="text-[#C8952E] hover:underline text-xs mt-1 tracking-widest uppercase font-semibold">Book →</p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- First-visit reassurance: lighter informational note after the 4 service cards -->
+      <div class="mt-6 px-6 py-4 text-center">
+        <p class="text-[#4A4A4A] text-base leading-relaxed font-['Inter'] italic max-w-3xl mx-auto">
           First time trying Ashiatsu? Nikki checks in early in the session to dial the pressure to exactly where you want it. Every session is tailored to what your body needs that day.
         </p>
       </div>
 
-      <!-- Money-back guarantee -->
-      <div class="mb-3 bg-[#162040]/30 rounded-lg px-6 py-4 border-l-[3px] border-l-[#c8a84b]/30">
-        <p class="text-[#c8a84b]/80 text-xs leading-relaxed font-['Inter']">
-          <strong class="text-[#c8a84b] font-semibold">100% satisfaction guarantee.</strong> If you don't feel a difference after your session, you don't pay. No hassle, no questions.
-        </p>
-      </div>
-
-      <!-- Session rows -->
-      <div class="space-y-px mb-3">
-        <a href="/book" class="block group">
-          <div class="bg-[#1e2d52] p-6 md:p-7 flex items-center justify-between hover:bg-[#162040]/30 transition-colors duration-200 border-b border-[#c8a84b]/8">
-            <div>
-              <p class="font-['Playfair_Display'] text-lg text-[#f0f4ff] group-hover:text-[#c8a84b] transition-colors duration-200">90 min Customized Session</p>
-              <p class="text-[#c8a84b]/80 text-sm mt-1">Recommended starting point. Enough time to assess and address the full pattern.</p>
-            </div>
-            <div class="text-right ml-8 shrink-0">
-              <p class="font-['Playfair_Display'] text-2xl text-[#c8a84b]">$175</p>
-              <p class="text-[#c8a84b]/80 hover:text-[#c8a84b] text-xs mt-1 tracking-widest uppercase transition-colors duration-200">Book →</p>
-            </div>
-          </div>
-        </a>
-        <a href="/book" class="block group">
-          <div class="bg-[#1e2d52] p-6 md:p-7 flex items-center justify-between hover:bg-[#162040]/30 transition-colors duration-200 border-b border-[#c8a84b]/8">
-            <div>
-              <p class="font-['Playfair_Display'] text-lg text-[#f0f4ff] group-hover:text-[#c8a84b] transition-colors duration-200">75 min Customized Session</p>
-              <p class="text-[#c8a84b]/80 text-sm mt-1">Primary area plus surrounding patterns. Good for targeted recovery.</p>
-            </div>
-            <div class="text-right ml-8 shrink-0">
-              <p class="font-['Playfair_Display'] text-2xl text-[#c8a84b]">$150</p>
-              <p class="text-[#c8a84b]/80 hover:text-[#c8a84b] text-xs mt-1 tracking-widest uppercase transition-colors duration-200">Book →</p>
-            </div>
-          </div>
-        </a>
-        <a href="/book" class="block group">
-          <div class="bg-[#1e2d52] p-6 md:p-7 flex items-center justify-between hover:bg-[#162040]/30 transition-colors duration-200">
-            <div>
-              <p class="font-['Playfair_Display'] text-lg text-[#f0f4ff] group-hover:text-[#c8a84b] transition-colors duration-200">60 min Customized Session</p>
-              <p class="text-[#c8a84b]/80 text-sm mt-1">Focused work on a specific area or maintenance between longer sessions.</p>
-            </div>
-            <div class="text-right ml-8 shrink-0">
-              <p class="font-['Playfair_Display'] text-2xl text-[#c8a84b]">$125</p>
-              <p class="text-[#c8a84b]/80 hover:text-[#c8a84b] text-xs mt-1 tracking-widest uppercase transition-colors duration-200">Book →</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Prenatal -->
-      <div class="mt-10 border-t border-[#c8a84b]/8 pt-10">
+      <!-- Prenatal: 90 → 75 → 60 (descending) -->
+      <div class="mt-12 pt-10 border-t border-[#E8E0D4]">
         <p class="section-label mb-5">Prenatal Massage</p>
-        <div class="space-y-px">
+        <div class="space-y-3">
           {[
-            { label: '60 min Prenatal', price: '$125' },
-            { label: '75 min Prenatal', price: '$150' },
             { label: '90 min Prenatal', price: '$175' },
+            { label: '75 min Prenatal', price: '$150' },
+            { label: '60 min Prenatal', price: '$125' },
           ].map(s => (
             <a href="/book" class="block group">
-              <div class="bg-[#1e2d52] p-6 flex items-center justify-between hover:bg-[#162040]/30 transition-colors duration-200 border-b border-[#c8a84b]/8">
+              <div class="bg-white border border-[#E8E0D4] rounded-lg p-5 md:p-6 flex items-center justify-between shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
                 <div>
-                  <p class="text-[#f0f4ff] group-hover:text-[#c8a84b] transition-colors duration-200">{s.label}</p>
-                  <p class="text-[#c8a84b]/50 text-xs mt-1">All products safe for mother and baby</p>
+                  <p class="font-['Playfair_Display'] text-xl text-[#1A1A1A] group-hover:text-[#C8952E] transition-colors duration-200">{s.label}</p>
+                  <p class="text-[#4A4A4A] text-sm mt-1">All products safe for mother and baby</p>
                 </div>
-                <div class="text-right ml-8 shrink-0">
-                  <p class="font-['Playfair_Display'] text-xl text-[#c8a84b]">{s.price}</p>
-                  <p class="text-[#c8a84b]/80 hover:text-[#c8a84b] text-xs mt-1 tracking-widest uppercase transition-colors duration-200">Book →</p>
+                <div class="text-right ml-6 shrink-0">
+                  <p class="font-['Playfair_Display'] text-2xl text-[#C8952E]">{s.price}</p>
+                  <p class="text-[#C8952E] hover:underline text-xs mt-1 tracking-widest uppercase font-semibold">Book →</p>
                 </div>
               </div>
             </a>
@@ -243,24 +228,24 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Packages -->
-      <div class="mt-10 border-t border-[#c8a84b]/8 pt-10">
+      <!-- Packages: 10-Pack → 5-Pack → 3-Pack (descending) -->
+      <div class="mt-12 pt-10 border-t border-[#E8E0D4]">
         <p class="section-label mb-5">Packages</p>
-        <div class="space-y-px">
+        <div class="space-y-3">
           {[
-            { label: '3-Pack: Three 60-minute sessions', price: '$345', desc: '$115/session, save $30. Sessions scheduled individually at your convenience. Expires 6 months from purchase. Non-transferable, non-refundable.' },
-            { label: '5-Pack: Five 60-minute sessions', price: '$550', desc: '$110/session, save $75. Sessions scheduled individually at your convenience. Expires 9 months from purchase. Non-transferable, non-refundable.' },
             { label: '10-Pack: Ten 60-minute sessions', price: '$1,050', desc: '$105/session, save $200. Sessions scheduled individually at your convenience. Expires 12 months from purchase. Non-transferable, non-refundable.' },
+            { label: '5-Pack: Five 60-minute sessions', price: '$550', desc: '$110/session, save $75. Sessions scheduled individually at your convenience. Expires 9 months from purchase. Non-transferable, non-refundable.' },
+            { label: '3-Pack: Three 60-minute sessions', price: '$345', desc: '$115/session, save $30. Sessions scheduled individually at your convenience. Expires 6 months from purchase. Non-transferable, non-refundable.' },
           ].map(s => (
             <a href="/book" class="block group">
-              <div class="bg-[#1e2d52] p-6 flex items-start justify-between hover:bg-[#162040]/30 transition-colors duration-200 border-b border-[#c8a84b]/8">
+              <div class="bg-white border border-[#E8E0D4] rounded-lg p-5 md:p-6 flex items-start justify-between shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
                 <div class="flex-1">
-                  <p class="text-[#f0f4ff] group-hover:text-[#c8a84b] transition-colors duration-200 font-['Inter'] font-medium">{s.label}</p>
-                  <p class="text-[#c8a84b]/50 text-xs mt-1 leading-relaxed">{s.desc}</p>
+                  <p class="text-[#1A1A1A] group-hover:text-[#C8952E] transition-colors duration-200 font-['Inter'] font-medium text-lg">{s.label}</p>
+                  <p class="text-[#4A4A4A] text-sm mt-1 leading-relaxed">{s.desc}</p>
                 </div>
-                <div class="text-right ml-8 shrink-0">
-                  <p class="font-['Playfair_Display'] text-xl text-[#c8a84b]">{s.price}</p>
-                  <p class="text-[#c8a84b]/80 hover:text-[#c8a84b] text-xs mt-1 tracking-widest uppercase transition-colors duration-200">Book →</p>
+                <div class="text-right ml-6 shrink-0">
+                  <p class="font-['Playfair_Display'] text-2xl text-[#C8952E]">{s.price}</p>
+                  <p class="text-[#C8952E] hover:underline text-xs mt-1 tracking-widest uppercase font-semibold">Book →</p>
                 </div>
               </div>
             </a>
@@ -269,37 +254,34 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <!-- Add-ons -->
-      <div class="mt-10 border-t border-[#c8a84b]/8 pt-10">
+      <div class="mt-12 pt-10 border-t border-[#E8E0D4]">
         <p class="section-label mb-5">Add-Ons</p>
-        <div class="bg-[#1e2d52] p-6 flex items-center justify-between">
+        <div class="bg-white border border-[#E8E0D4] rounded-lg p-5 md:p-6 flex items-center justify-between shadow-sm">
           <div>
-            <p class="text-[#f0f4ff]">CBD-Infused Massage Oil</p>
-            <p class="text-[#c8a84b]/80 text-sm mt-1">Deep absorption, reduced inflammation. Add to any session.</p>
+            <p class="text-[#1A1A1A] font-['Inter'] font-medium text-lg">CBD-Infused Massage Oil</p>
+            <p class="text-[#4A4A4A] text-base mt-1">Deep absorption, reduced inflammation. Add to any session.</p>
           </div>
-          <div class="text-right ml-8 shrink-0">
-            <p class="font-['Playfair_Display'] text-xl text-[#c8a84b]">+$10</p>
+          <div class="text-right ml-6 shrink-0">
+            <p class="font-['Playfair_Display'] text-2xl text-[#C8952E]">+$10</p>
           </div>
         </div>
       </div>
 
-      <div class="text-center mt-12">
-        <a href="/book" class="btn-primary shadow-md shadow-[#c8a84b]/20 hover:shadow-lg hover:shadow-[#c8a84b]/30 hover:scale-[1.02] transition-all duration-200">Book a Session</a>
+      <div class="text-center mt-14">
+        <a href="/book" class="btn-primary">Book a Session</a>
       </div>
     </div>
   </section>
 
-  <!-- SECTION DIVIDER -->
-  <div class="bg-[#0d1428] py-2"><div class="max-w-6xl mx-auto px-6"><div class="h-[1px] bg-gradient-to-r from-transparent via-[#c8a84b]/15 to-transparent"></div></div></div>
-
-  <!-- REVIEW WALL — 6 unique reviewers, no overlap with any other section -->
-  <section class="py-20 px-6 bg-[#0d1428]">
+  <!-- REVIEW WALL: 6 unique reviewers -->
+  <section class="py-20 px-6 bg-[#FAF8F5]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <p class="section-label mb-4">What Clients Say</p>
         <div class="flex items-center justify-center gap-2 mb-2">
-          <span class="text-[#c8a84b] text-xl" style="filter:drop-shadow(0 0 2px rgba(200,168,75,0.3));">★★★★★</span>
+          <span class="text-[#C8952E] text-2xl">★★★★★</span>
         </div>
-        <p class="text-[#c8a84b]/80 text-sm tracking-widest uppercase">5.0 — 22 Google Reviews</p>
+        <p class="text-[#4A4A4A] text-base tracking-widest uppercase">5.0, 22 Google Reviews</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
@@ -310,55 +292,49 @@ import Layout from '../layouts/Layout.astro';
           { quote: "Nikki has made it so that those symptoms are gone 95% of the time for me. I HIGHLY recommend Nikki.", name: "Adam" },
           { quote: "Nikki does a great job working on the knots I have when I come to see her. I always leave feeling relaxed afterward.", name: "Jesus Jasso" },
         ].map(r => (
-          <div class="bg-[#0d1428] border border-[#c8a84b]/10 p-6 shadow-md shadow-black/15 hover:border-[#c8a84b]/20 hover:shadow-lg transition-all duration-300 cursor-default">
-            <p class="text-[#c8a84b] text-xs mb-4" style="filter:drop-shadow(0 0 2px rgba(200,168,75,0.3));">★★★★★</p>
-            <p class="text-[#f0f4ff]/80 text-sm leading-relaxed italic mb-5">"{r.quote}"</p>
-            <div class="gold-line mb-2"></div>
-            <p class="text-[#c8a84b]/80 text-xs tracking-widest uppercase">{r.name}</p>
+          <div class="bg-white border border-[#E8E0D4] rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-200">
+            <p class="text-[#C8952E] text-base mb-4">★★★★★</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed italic mb-5">"{r.quote}"</p>
+            <div class="w-8 h-px bg-[#c8a84b] mb-2"></div>
+            <p class="text-[#4A4A4A] text-xs tracking-widest uppercase font-medium">{r.name}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- SECTION DIVIDER -->
-  <div class="bg-[#0d1428] py-2"><div class="max-w-6xl mx-auto px-6"><div class="h-[1px] bg-gradient-to-r from-transparent via-[#c8a84b]/15 to-transparent"></div></div></div>
-
-  <!-- LEAD CAPTURE: Free Guide -->
-  <section class="py-16 px-6 bg-[#0d1428]">
+  <!-- LEAD CAPTURE: Free Guide on studio blue band -->
+  <section class="py-16 px-6 bg-[#5B8FA8]">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="font-['Playfair_Display'] text-3xl text-[#f0f4ff] mb-3">Not ready to book? Start here.</h2>
-      <p class="text-[#c8a84b]/80 text-sm leading-relaxed mb-8">Get Nikki's free guide: 5 signs your body is compensating, and what to do about it.</p>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl text-white mb-3">Not ready to book? Start here.</h2>
+      <p class="text-white/90 text-lg leading-relaxed mb-8">Get Nikki's free guide: 5 signs your body is compensating, and what to do about it.</p>
       <div id="home-guide-form-wrap">
         <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" id="home-guide-form">
           <input
             type="email"
             id="home-guide-email"
             placeholder="your@email.com"
-            class="flex-1 bg-[#162040] border border-white/20 text-[#f0f4ff] px-4 py-3 text-sm font-['Inter'] placeholder:text-[#c8a84b]/40 focus:outline-none focus:border-[#c8a84b]/60"
+            class="flex-1 bg-white border border-white text-[#1A1A1A] px-4 py-3 text-base font-['Inter'] placeholder:text-[#4A4A4A]/60 focus:outline-none focus:border-[#C8952E] rounded-lg"
           />
-          <button type="submit" class="btn-primary whitespace-nowrap cursor-pointer">Send Me the Guide</button>
+          <button type="submit" class="btn-primary whitespace-nowrap">Send Me the Guide</button>
         </form>
-        <p id="home-guide-error" class="hidden text-red-400 text-xs mt-2 font-['Inter']">Enter a valid email to get the guide.</p>
+        <p id="home-guide-error" class="hidden text-yellow-200 text-sm mt-2 font-['Inter']">Enter a valid email to get the guide.</p>
       </div>
       <div id="home-guide-success" class="hidden max-w-md mx-auto">
-        <p class="text-[#c8a84b] leading-relaxed text-sm font-['Inter']"><strong class="font-semibold">Your guide is on the way.</strong> We also added you to Nikki's newsletter so you'll get body tips, session openings, and the occasional Stoney update. Check your inbox.</p>
+        <p class="text-white leading-relaxed text-base font-['Inter']"><strong class="font-semibold">Your guide is on the way.</strong> We also added you to Nikki's newsletter so you'll get body tips, session openings, and the occasional Stoney update. Check your inbox.</p>
       </div>
     </div>
   </section>
 
-  <!-- SECTION DIVIDER -->
-  <div class="bg-[#162040] py-2"><div class="max-w-6xl mx-auto px-6"><div class="h-[1px] bg-gradient-to-r from-transparent via-[#c8a84b]/15 to-transparent"></div></div></div>
-
   <!-- CLOSING CTA -->
-  <section class="py-24 px-6 bg-[#162040] text-center">
+  <section class="py-24 px-6 bg-white text-center">
     <div class="max-w-2xl mx-auto">
       <p class="section-label mb-6">Ready?</p>
-      <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#f0f4ff] mb-6 leading-tight">
-        If you're ready for a different kind of work, <em class="text-[#c8a84b]">Nikki is ready when you are.</em>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-5xl text-[#1A1A1A] mb-6 leading-tight">
+        If you're ready for a different kind of work, <em class="text-[#C8952E]">Nikki is ready when you are.</em>
       </h2>
-      <p class="text-[#c8a84b]/80 mb-10">10691 E Carter Rd, Traverse City, MI · Online booking</p>
-      <a href="/book" class="btn-primary text-base px-12 py-4 shadow-md shadow-[#c8a84b]/20 hover:shadow-lg hover:shadow-[#c8a84b]/30 hover:scale-[1.02] transition-all duration-200">Book Your Session</a>
+      <p class="text-[#4A4A4A] text-lg mb-10">10691 E Carter Rd, Traverse City, MI · Online booking</p>
+      <a href="/book" class="btn-primary text-base px-10 py-4">Book Your Session</a>
     </div>
   </section>
 

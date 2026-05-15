@@ -11,7 +11,7 @@ interface Props {
 
 const {
   title,
-  description = "Nikki Leonardi Bodywork — Traverse City's premier therapeutic massage specialist. Ashiatsu barefoot massage, myofascial release, deep tissue, cupping, and gua sha. 13 years. 5.0 stars.",
+  description = "Nikki Leonardi Bodywork. Traverse City's premier therapeutic massage specialist. Ashiatsu barefoot massage, myofascial release, deep tissue, cupping, and gua sha. 13 years. 5.0 stars.",
   ogImage = '/images/studio.webp',
   showStickyBook = false,
   isBookPage = false
@@ -31,42 +31,42 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#162040" />
+    <meta name="theme-color" content="#FFFFFF" />
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <link rel="preload" as="image" href="/images/studio.webp" />
+    <link rel="preload" as="image" href="/studio-interior.webp" />
   </head>
   <body data-is-book-page={isBookPage ? "true" : "false"}>
     <!-- Nav -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#162040]/95 backdrop-blur-sm border-b border-white/5">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#E8E0D4] shadow-sm">
       <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-200">
           <img src="/images/nikki-logo.webp" alt="Nikki Leonardi Bodywork logo" width="62" height="40" class="h-10 w-auto" />
-          <span class="font-['Inter'] text-[#f0f4ff] tracking-wide" style="font-size:0.65rem;letter-spacing:0.04em;line-height:1.2;">Nikki Leonardi Bodywork</span>
+          <span class="font-['Inter'] text-[#1A1A1A] tracking-wide" style="font-size:0.75rem;letter-spacing:0.04em;line-height:1.2;">Nikki Leonardi Bodywork</span>
         </a>
         <!-- Desktop nav -->
         <div class="hidden md:flex items-center gap-8">
-          <a href="/" class="text-[#c8a84b]/80 hover:text-[#c8a84b] tracking-widest uppercase transition-colors duration-200" style="font-size:0.7rem;letter-spacing:0.15em;">Home</a>
-          <a href="/about" class="text-[#c8a84b]/80 hover:text-[#c8a84b] tracking-widest uppercase transition-colors duration-200" style="font-size:0.7rem;letter-spacing:0.15em;">Meet Nikki</a>
-          <a href="/tools" class="text-[#c8a84b]/80 hover:text-[#c8a84b] tracking-widest uppercase transition-colors duration-200" style="font-size:0.7rem;letter-spacing:0.15em;">Tools of the Trade</a>
+          <a href="/" class="text-[#1A1A1A] hover:text-[#C8952E] tracking-widest uppercase transition-colors duration-200 text-sm font-medium">Home</a>
+          <a href="/about" class="text-[#1A1A1A] hover:text-[#C8952E] tracking-widest uppercase transition-colors duration-200 text-sm font-medium">Meet Nikki</a>
+          <a href="/tools" class="text-[#1A1A1A] hover:text-[#C8952E] tracking-widest uppercase transition-colors duration-200 text-sm font-medium">Tools of the Trade</a>
           <a href="/book" class="btn-primary ml-4">Book a Session</a>
         </div>
         <!-- Mobile menu button -->
-        <button id="menu-toggle" class="md:hidden text-[#c8a84b] cursor-pointer" aria-label="Open menu">
+        <button id="menu-toggle" class="md:hidden text-[#1A1A1A] cursor-pointer" aria-label="Open menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path d="M3 6h18M3 12h18M3 18h18"/>
           </svg>
         </button>
       </div>
       <!-- Mobile menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-[#162040] border-t border-white/5 px-6 py-6 flex flex-col gap-5">
-        <a href="/" class="text-[#c8a84b]/80 hover:text-[#c8a84b] uppercase tracking-widest transition-colors duration-200" style="font-size:0.75rem;">Home</a>
-        <a href="/about" class="text-[#c8a84b]/80 hover:text-[#c8a84b] uppercase tracking-widest transition-colors duration-200" style="font-size:0.75rem;">Meet Nikki</a>
-        <a href="/tools" class="text-[#c8a84b]/80 hover:text-[#c8a84b] uppercase tracking-widest transition-colors duration-200" style="font-size:0.75rem;">Tools of the Trade</a>
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-[#E8E0D4] px-6 py-6 flex flex-col gap-5">
+        <a href="/" class="text-[#1A1A1A] hover:text-[#C8952E] uppercase tracking-widest transition-colors duration-200 text-sm font-medium">Home</a>
+        <a href="/about" class="text-[#1A1A1A] hover:text-[#C8952E] uppercase tracking-widest transition-colors duration-200 text-sm font-medium">Meet Nikki</a>
+        <a href="/tools" class="text-[#1A1A1A] hover:text-[#C8952E] uppercase tracking-widest transition-colors duration-200 text-sm font-medium">Tools of the Trade</a>
         <a href="/book" class="btn-primary w-full text-center mt-2">Book a Session</a>
       </div>
     </nav>
@@ -112,44 +112,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         class="fixed bottom-0 left-0 right-0 z-40 md:hidden px-4 pb-4 pt-2 opacity-0 pointer-events-none transition-opacity duration-300"
         style="box-shadow: 0 -4px 20px rgba(0,0,0,0.4);"
       >
-        <a href="/book" class="block w-full text-center bg-[#C8952E] text-[#162040] font-semibold py-4 tracking-widest uppercase text-sm hover:bg-[#d4a94a] transition-colors duration-200">
+        <a href="/book" class="block w-full text-center bg-[#C8952E] text-white font-semibold py-4 tracking-widest uppercase text-sm rounded-lg shadow-md border-2 border-[#C8952E] hover:bg-[#B8850E] hover:border-[#B8850E] transition-colors duration-200">
           Book a Session
         </a>
       </div>
     )}
-
-    <!-- Exit Intent Popup (all pages) -->
-    <div
-      id="exit-popup-backdrop"
-      class="fixed inset-0 z-[100] bg-black/60 flex items-center justify-center px-4"
-      style="opacity:0;pointer-events:none;transition:opacity 200ms ease;"
-      aria-modal="true"
-      role="dialog"
-      aria-labelledby="exit-popup-headline"
-    >
-      <div class="bg-[#0d1428] border border-[#c8a84b]/20 rounded-lg max-w-[480px] w-full px-8 py-10 relative shadow-2xl">
-        <button id="exit-popup-close" class="absolute top-4 right-5 text-[#c8a84b]/50 hover:text-[#c8a84b] text-2xl leading-none cursor-pointer transition-colors duration-200" aria-label="Close">&times;</button>
-        <p class="section-label mb-3">Free Guide</p>
-        <h2 id="exit-popup-headline" class="font-['Playfair_Display'] text-2xl text-[#f0f4ff] mb-3">Before you go.</h2>
-        <p class="text-[#c8a84b]/80 text-sm leading-relaxed mb-6 font-['Inter']">Get Nikki's free guide: 5 signs your body is compensating, and what to do about it.</p>
-        <div id="exit-popup-form-wrap">
-          <form id="exit-popup-form" class="flex flex-col gap-3">
-            <input
-              type="email"
-              id="exit-popup-email"
-              placeholder="your@email.com"
-              class="w-full bg-[#162040] border border-white/20 text-[#f0f4ff] px-4 py-3 text-sm font-['Inter'] placeholder:text-[#c8a84b]/40 focus:outline-none focus:border-[#c8a84b]/60"
-            />
-            <p id="exit-popup-error" class="hidden text-red-400 text-xs font-['Inter']">Enter a valid email to get the guide.</p>
-            <button type="submit" class="btn-primary w-full cursor-pointer">Send Me the Guide</button>
-          </form>
-          <button id="exit-popup-dismiss" class="block w-full text-center text-[#c8a84b]/50 text-xs mt-4 hover:text-[#c8a84b]/80 transition-colors duration-200 font-['Inter'] cursor-pointer">No thanks</button>
-        </div>
-        <div id="exit-popup-success" class="hidden">
-          <p class="text-[#c8a84b] leading-relaxed text-sm font-['Inter']"><strong class="font-semibold">Your guide is on the way.</strong> We also added you to Nikki's newsletter so you'll get body tips, session openings, and the occasional Stoney update. Check your inbox.</p>
-        </div>
-      </div>
-    </div>
 
     <!-- Mobile menu JS -->
     <script>
@@ -184,90 +151,5 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </script>
     )}
 
-    <!-- Exit intent popup JS -->
-    <script>
-      (function() {
-        const GUIDE_PDF = '/guides/5-signs-your-body-is-compensating.pdf';
-        const backdrop   = document.getElementById('exit-popup-backdrop');
-        const form       = document.getElementById('exit-popup-form');
-        const emailInput = document.getElementById('exit-popup-email');
-        const errorMsg   = document.getElementById('exit-popup-error');
-        const formWrap   = document.getElementById('exit-popup-form-wrap');
-        const successMsg = document.getElementById('exit-popup-success');
-        const closeBtn   = document.getElementById('exit-popup-close');
-        const dismissBtn = document.getElementById('exit-popup-dismiss');
-
-        if (!backdrop) return;
-
-        const isBookPage = document.body.getAttribute('data-is-book-page') === 'true';
-
-        function hasGivenEmail() {
-          try { return !!localStorage.getItem('nikkiGuideEmail'); } catch(e) { return false; }
-        }
-        function hasSeenPopup() {
-          try { return !!sessionStorage.getItem('exitPopupShown'); } catch(e) { return false; }
-        }
-        function markSeen() {
-          try { sessionStorage.setItem('exitPopupShown', '1'); } catch(e) {}
-        }
-        function isBookPagePastAcuity() {
-          if (!isBookPage) return false;
-          const acuity = document.querySelector('iframe[src*="acuityscheduling"]');
-          if (!acuity) return false;
-          return acuity.getBoundingClientRect().bottom < 0;
-        }
-
-        function showPopup() {
-          if (hasSeenPopup() || hasGivenEmail() || isBookPagePastAcuity()) return;
-          markSeen();
-          backdrop.style.opacity = '1';
-          backdrop.style.pointerEvents = 'auto';
-        }
-        function hidePopup() {
-          backdrop.style.opacity = '0';
-          backdrop.style.pointerEvents = 'none';
-        }
-
-        closeBtn?.addEventListener('click', hidePopup);
-        dismissBtn?.addEventListener('click', hidePopup);
-        backdrop?.addEventListener('click', (e) => { if (e.target === backdrop) hidePopup(); });
-
-        // Desktop exit intent: mouse leaving viewport from the top
-        document.addEventListener('mouseout', (e) => {
-          if (!e.relatedTarget && e.clientY < 5) showPopup();
-        });
-
-        // Mobile fallback: 45s inactivity
-        let mobileTimer = null;
-        function resetMobileTimer() {
-          if (window.innerWidth >= 768) return;
-          clearTimeout(mobileTimer);
-          mobileTimer = setTimeout(showPopup, 45000);
-        }
-        resetMobileTimer();
-        ['touchstart', 'scroll', 'click'].forEach(ev => {
-          document.addEventListener(ev, resetMobileTimer, { passive: true });
-        });
-
-        // Form submit
-        form?.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const email = (emailInput as HTMLInputElement)?.value?.trim() || '';
-          const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-          if (!valid) { errorMsg?.classList.remove('hidden'); return; }
-          errorMsg?.classList.add('hidden');
-          try {
-            const arr = JSON.parse(localStorage.getItem('nikkiEmails') || '[]');
-            arr.push({ email, ts: Date.now() });
-            localStorage.setItem('nikkiEmails', JSON.stringify(arr));
-            localStorage.setItem('nikkiGuideEmail', email);
-          } catch(err) {}
-          window.open(GUIDE_PDF, '_blank');
-          if (formWrap) formWrap.style.display = 'none';
-          successMsg?.classList.remove('hidden');
-          setTimeout(hidePopup, 3000);
-        });
-      })();
-    </script>
   </body>
 </html>

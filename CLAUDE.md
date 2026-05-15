@@ -36,19 +36,30 @@ Four pages:
 6. Premium positioning. No discounts to drive bookings. Urgency is scarcity/capacity-based only.
 7. Pricing must match Acuity. Current rates: 120 min $250, 90 min $175, 75 min $150, 60 min $125.
 
-## Design System
+## Design System (Light Mode — Round 5)
 - Typography: Playfair Display (headings), Inter (body)
-- Colors: Navy backgrounds (bg-[#0d1428], bg-[#162040]), gold accents (#C8952E, #c8a84b)
-- Gold text opacity: minimum /80 for body text (WCAG AA). /50 only for decorative elements.
-- Cards: bg-[#0d1428] or bg-[#162040]/50 with border-[#c8a84b]/10, shadow-lg, hover transitions duration-200 or duration-300
-- Buttons: Gold bg (#C8952E), white text, shadow-md, hover:shadow-lg hover:scale-[1.02]
-- Section dividers: bg-gradient-to-r from-transparent via-[#c8a84b]/15 to-transparent h-[1px]
+- Backgrounds:
+  - Primary: `bg-white` (#FFFFFF)
+  - Alternate sections: `bg-[#FAF8F5]` (warm cream)
+  - Accent bands (featured quote, guide capture, tools intro): `bg-[#5B8FA8]` (studio blue)
+  - Footer only: `bg-[#0d1428]` (navy, stays dark)
+- Text:
+  - Primary: `text-[#1A1A1A]` on light backgrounds
+  - Secondary: `text-[#4A4A4A]` on light backgrounds
+  - On blue accent sections: `text-white` and `text-white/90`
+  - Section labels (PACKAGES, etc.): gold `#C8952E`, uppercase, tracking-widest
+- Gold accents: `#C8952E` (primary), `#c8a84b` (secondary borders/decoration), `#B8850E` (hover dark)
+- Cards (light mode): `bg-white border border-[#E8E0D4] rounded-lg shadow-sm` or `shadow-md`. Hover: `hover:shadow-lg hover:border-[#c8a84b]/30 transition-all duration-200`
+- Buttons (.btn-primary): gold `#C8952E` bg, white text, `border-2 border-[#C8952E]`, rounded-lg, shadow-md. Hover: bg `#B8850E`, shadow-lg, scale-[1.02]
+- Section dividers on light: `bg-gradient-to-r from-transparent via-[#E8E0D4] to-transparent h-[1px]`. On blue: `via-white/20`
 
 ## Key Components
-- Exit-intent popup: Uses direct style.opacity manipulation (NOT Tailwind class toggling — Astro CSP blocks it). Fires on cursor exit desktop, 45s inactivity mobile. Once per session.
-- Guide forms: Three instances (homepage, /book, exit popup). Store email to localStorage. Open PDF in new tab.
-- Acuity iframe: Lazy-loaded. Do not modify the embed URL or parameters.
-- Logo: nikki-logo.webp (optimized). Explicit width/height on both nav and footer instances.
+- Guide forms: Two instances (homepage on blue band, /book page on blue band). Store email to localStorage. Open PDF in new tab.
+- Acuity iframe: Lazy-loaded on /book. Do not modify the embed URL or parameters.
+- Logo: nikki-logo.webp. Explicit width/height on both nav (62x40) and footer (99x64) instances.
+- Hero photo (homepage): `/studio-interior.webp` (394 KB), split layout right column.
+- Portrait (about page): `/nikki-portrait.webp` (87 KB), split layout right column on hero.
+- FAQ accordion on /book: text-xl questions, text-lg answers, single-open behavior.
 
 ## Deployment
 - Push to main branch — Railway auto-deploys

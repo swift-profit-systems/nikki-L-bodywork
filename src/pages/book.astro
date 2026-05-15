@@ -8,18 +8,18 @@ import Layout from '../layouts/Layout.astro';
   isBookPage={true}
 >
   <div class="pt-16">
-    <section class="py-24 px-6 bg-[#162040]">
+    <section class="py-20 px-6 bg-white">
       <div class="max-w-4xl mx-auto">
         <p class="section-label mb-6">Booking</p>
-        <h1 class="font-['Playfair_Display'] text-5xl text-[#f0f4ff] mb-6 leading-tight">
-          Ready to book?<br/><em class="text-[#c8a84b]">Let's get you scheduled.</em>
+        <h1 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#1A1A1A] mb-6 leading-tight">
+          Ready to book?<br/><em class="text-[#C8952E]">Let's get you scheduled.</em>
         </h1>
-        <p class="text-[#c8a84b]/80 max-w-lg leading-relaxed mb-12">
+        <p class="text-[#4A4A4A] text-lg max-w-2xl leading-relaxed mb-12">
           Select the session type and length that fits your goals. Not sure where to start? A 90-minute session gives enough time to assess and fully address your pattern.
         </p>
 
-        <!-- Acuity Scheduling embed -->
-        <div class="border border-[#c8a84b]/20 bg-[#0d1428]" id="acuity-embed-wrap">
+        <!-- Acuity Scheduling embed (DO NOT modify URL or parameters) -->
+        <div class="border border-[#E8E0D4] bg-white rounded-lg shadow-md overflow-hidden" id="acuity-embed-wrap">
           <iframe
             src="https://app.acuityscheduling.com/schedule.php?owner=38952971&ref=embedded_csp"
             title="Book a session with Nikki Leonardi"
@@ -32,103 +32,95 @@ import Layout from '../layouts/Layout.astro';
           <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
         </div>
 
-        <!-- NOTE: Acuity widget styling via Advanced CSS requires Acuity Premium/Powerhouse plan.
-             CSS to apply when available:
-             .is-embedded .btn { background: #C8952E !important; color: #fff !important; border-color: #C8952E !important; }
-             .is-embedded .select-item, .is-embedded .select-item-box { background: #f8f4ee !important; }
-             .is-embedded body, .is-embedded * { font-family: 'Inter', sans-serif !important; }
-             .powered-by { display: none; }
-        -->
-
         <!-- Money-back guarantee -->
-        <div class="mt-12 mb-2 px-6 py-5 bg-[#1e2d52]/60 border border-[#c8a84b]/20">
-          <p class="text-[#c8a84b]/80 text-base leading-relaxed font-['Inter']">
-            <strong class="text-[#c8a84b] font-semibold">100% satisfaction guarantee.</strong> If you don't feel a difference after your session, you don't pay. No hassle, no questions.
+        <div class="mt-12 px-6 py-5 bg-[#FAF8F5] border-l-4 border-l-[#C8952E] rounded-lg">
+          <p class="text-[#4A4A4A] text-lg leading-relaxed font-['Inter']">
+            <strong class="text-[#C8952E] font-semibold">100% satisfaction guarantee.</strong> If you don't feel a difference after your session, you don't pay. No hassle, no questions.
           </p>
         </div>
 
         <!-- FAQ Section -->
-        <div class="mt-10">
-          <h2 class="font-['Playfair_Display'] text-3xl text-[#f0f4ff] mb-10">Common Questions</h2>
-          <div class="space-y-2" id="faq-accordion">
+        <div class="mt-16">
+          <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl text-[#1A1A1A] mb-10">Common Questions</h2>
+          <div class="space-y-3" id="faq-accordion">
 
-            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
-              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
-                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-lg">What should I wear?</span>
-                <span class="faq-icon text-[#c8a84b] text-xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+            <div class="faq-item bg-white border border-[#E8E0D4] rounded-lg shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between cursor-pointer" aria-expanded="false">
+                <span class="text-[#1A1A1A] font-['Inter'] font-medium text-xl">What should I wear?</span>
+                <span class="faq-icon text-[#C8952E] text-2xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
               </button>
               <div class="faq-body hidden px-6 pb-5">
-                <p class="text-[#c8a84b]/85 text-base leading-relaxed">Whatever is comfortable. You'll undress to your comfort level and be draped throughout the session. Most clients are in underwear or fully undressed under the sheet.</p>
+                <p class="text-[#4A4A4A] text-lg leading-relaxed">Whatever is comfortable. You'll undress to your comfort level and be draped throughout the session. Most clients are in underwear or fully undressed under the sheet.</p>
               </div>
             </div>
 
-            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
-              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
-                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-lg">Is Ashiatsu safe? Are there contraindications?</span>
-                <span class="faq-icon text-[#c8a84b] text-xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+            <div class="faq-item bg-white border border-[#E8E0D4] rounded-lg shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between cursor-pointer" aria-expanded="false">
+                <span class="text-[#1A1A1A] font-['Inter'] font-medium text-xl">Is Ashiatsu safe? Are there contraindications?</span>
+                <span class="faq-icon text-[#C8952E] text-2xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
               </button>
               <div class="faq-body hidden px-6 pb-5">
-                <p class="text-[#c8a84b]/85 text-base leading-relaxed">Ashiatsu is safe for most people, but it's not appropriate for everyone. If you're pregnant (prenatal sessions are a separate offering), have osteoporosis, recent surgery, acute inflammation, or certain other conditions, we'll talk through it before your session. When in doubt, mention it when you book and I'll let you know.</p>
+                <p class="text-[#4A4A4A] text-lg leading-relaxed">Ashiatsu is safe for most people, but it's not appropriate for everyone. If you're pregnant (prenatal sessions are a separate offering), have osteoporosis, recent surgery, acute inflammation, or certain other conditions, we'll talk through it before your session. When in doubt, mention it when you book and I'll let you know.</p>
               </div>
             </div>
 
-            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
-              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
-                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-lg">How do I know which session length to book?</span>
-                <span class="faq-icon text-[#c8a84b] text-xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+            <div class="faq-item bg-white border border-[#E8E0D4] rounded-lg shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between cursor-pointer" aria-expanded="false">
+                <span class="text-[#1A1A1A] font-['Inter'] font-medium text-xl">How do I know which session length to book?</span>
+                <span class="faq-icon text-[#C8952E] text-2xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
               </button>
               <div class="faq-body hidden px-6 pb-5">
-                <p class="text-[#c8a84b]/85 text-base leading-relaxed">If it's your first visit, 90 minutes is the best starting point. It gives me enough time to assess what's going on and actually address the pattern, not just chase the pain. If you already know you want full-body, thorough work, go with 120 minutes.</p>
+                <p class="text-[#4A4A4A] text-lg leading-relaxed">If it's your first visit, 90 minutes is the best starting point. It gives me enough time to assess what's going on and actually address the pattern, not just chase the pain. If you already know you want full-body, thorough work, go with 120 minutes.</p>
               </div>
             </div>
 
-            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
-              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
-                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-lg">What's your cancellation policy?</span>
-                <span class="faq-icon text-[#c8a84b] text-xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+            <div class="faq-item bg-white border border-[#E8E0D4] rounded-lg shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between cursor-pointer" aria-expanded="false">
+                <span class="text-[#1A1A1A] font-['Inter'] font-medium text-xl">What's your cancellation policy?</span>
+                <span class="faq-icon text-[#C8952E] text-2xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
               </button>
               <div class="faq-body hidden px-6 pb-5">
-                <p class="text-[#c8a84b]/85 text-base leading-relaxed">24 hours notice to cancel or reschedule. Late cancellations and no-shows are charged the full session fee. I keep my schedule intentionally small, so every slot matters.</p>
+                <p class="text-[#4A4A4A] text-lg leading-relaxed">24 hours notice to cancel or reschedule. Late cancellations and no-shows are charged the full session fee. I keep my schedule intentionally small, so every slot matters.</p>
               </div>
             </div>
 
-            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
-              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
-                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-lg">Do you take insurance?</span>
-                <span class="faq-icon text-[#c8a84b] text-xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+            <div class="faq-item bg-white border border-[#E8E0D4] rounded-lg shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between cursor-pointer" aria-expanded="false">
+                <span class="text-[#1A1A1A] font-['Inter'] font-medium text-xl">Do you take insurance?</span>
+                <span class="faq-icon text-[#C8952E] text-2xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
               </button>
               <div class="faq-body hidden px-6 pb-5">
-                <p class="text-[#c8a84b]/85 text-base leading-relaxed">I don't bill insurance directly. I can provide a superbill (receipt with CPT codes) that you can submit to your insurance for potential reimbursement. Many HSA/FSA cards work for massage therapy as well.</p>
+                <p class="text-[#4A4A4A] text-lg leading-relaxed">I don't bill insurance directly. I can provide a superbill (receipt with CPT codes) that you can submit to your insurance for potential reimbursement. Many HSA/FSA cards work for massage therapy as well.</p>
               </div>
             </div>
 
-            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
-              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
-                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-lg">What if I've never had deep tissue or Ashiatsu before?</span>
-                <span class="faq-icon text-[#c8a84b] text-xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+            <div class="faq-item bg-white border border-[#E8E0D4] rounded-lg shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between cursor-pointer" aria-expanded="false">
+                <span class="text-[#1A1A1A] font-['Inter'] font-medium text-xl">What if I've never had deep tissue or Ashiatsu before?</span>
+                <span class="faq-icon text-[#C8952E] text-2xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
               </button>
               <div class="faq-body hidden px-6 pb-5">
-                <p class="text-[#c8a84b]/85 text-base leading-relaxed">Perfect. I check in with you during the session to make sure the pressure is right. Ashiatsu feels different from hand massage. Most first-timers say it's the deepest, most comfortable pressure they've ever felt. You won't be white-knuckling the table.</p>
+                <p class="text-[#4A4A4A] text-lg leading-relaxed">Perfect. I check in with you during the session to make sure the pressure is right. Ashiatsu feels different from hand massage. Most first-timers say it's the deepest, most comfortable pressure they've ever felt. You won't be white-knuckling the table.</p>
               </div>
             </div>
 
-            <div class="faq-item border border-white/10 hover:border-[#c8a84b]/30 transition-colors">
-              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between" aria-expanded="false">
-                <span class="text-[#f0f4ff] font-['Inter'] font-medium text-lg">Is there parking?</span>
-                <span class="faq-icon text-[#c8a84b] text-xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
+            <div class="faq-item bg-white border border-[#E8E0D4] rounded-lg shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+              <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between cursor-pointer" aria-expanded="false">
+                <span class="text-[#1A1A1A] font-['Inter'] font-medium text-xl">Is there parking?</span>
+                <span class="faq-icon text-[#C8952E] text-2xl font-light ml-4 shrink-0 transition-transform duration-200">+</span>
               </button>
               <div class="faq-body hidden px-6 pb-5">
-                <p class="text-[#c8a84b]/85 text-base leading-relaxed">Yes, there's easy parking right at the studio. 10691 E Carter Rd, Traverse City.</p>
+                <p class="text-[#4A4A4A] text-lg leading-relaxed">Yes, there's easy parking right at the studio. 10691 E Carter Rd, Traverse City.</p>
               </div>
             </div>
 
           </div>
         </div>
 
-        <!-- Guide capture (wired up) -->
-        <div class="mt-16 mb-16 bg-[#1e2d52]/60 border border-white/10 px-8 py-10">
-          <h3 class="font-['Playfair_Display'] text-xl text-[#f0f4ff] mb-2">New to Ashiatsu?</h3>
-          <p class="text-[#c8a84b]/80 text-sm mb-6">Get a quick guide on what to expect at your first session.</p>
+        <!-- Guide capture on studio blue band -->
+        <div class="mt-16 mb-16 bg-[#5B8FA8] rounded-lg px-8 py-10">
+          <h3 class="font-['Playfair_Display'] text-2xl md:text-3xl text-white mb-2">New to Ashiatsu?</h3>
+          <p class="text-white/90 text-lg mb-6">Get a quick guide on what to expect at your first session.</p>
           <div id="book-guide-form-wrap">
             <form class="flex flex-col sm:flex-row gap-3 max-w-md" id="book-guide-form">
               <input
@@ -136,28 +128,28 @@ import Layout from '../layouts/Layout.astro';
                 name="email"
                 id="book-guide-email"
                 placeholder="your@email.com"
-                class="flex-1 bg-[#162040] border border-white/20 text-[#f0f4ff] px-4 py-3 text-sm font-['Inter'] placeholder:text-[#c8a84b]/40 focus:outline-none focus:border-[#c8a84b]/60"
+                class="flex-1 bg-white border border-white text-[#1A1A1A] px-4 py-3 text-base font-['Inter'] placeholder:text-[#4A4A4A]/60 focus:outline-none focus:border-[#C8952E] rounded-lg"
               />
               <button type="submit" class="btn-primary whitespace-nowrap">Send Me the Guide</button>
             </form>
-            <p id="book-guide-error" class="hidden text-red-400 text-xs mt-2 font-['Inter']">Enter a valid email to get the guide.</p>
+            <p id="book-guide-error" class="hidden text-yellow-200 text-sm mt-2 font-['Inter']">Enter a valid email to get the guide.</p>
           </div>
           <div id="book-guide-success" class="hidden">
-            <p class="text-[#c8a84b] leading-relaxed text-sm font-['Inter']"><strong class="font-semibold">Your guide is on the way.</strong> We also added you to Nikki's newsletter so you'll get body tips, session openings, and the occasional Stoney update. Check your inbox.</p>
+            <p class="text-white leading-relaxed text-base font-['Inter']"><strong class="font-semibold">Your guide is on the way.</strong> We also added you to Nikki's newsletter so you'll get body tips, session openings, and the occasional Stoney update. Check your inbox.</p>
           </div>
         </div>
 
         <!-- Location & contact -->
         <div class="grid md:grid-cols-2 gap-6 mt-12">
-          <div class="border border-white/10 p-6">
+          <div class="bg-white border border-[#E8E0D4] rounded-lg p-6 shadow-sm">
             <p class="section-label mb-3">Location</p>
-            <p class="text-[#c8a84b]/85 text-sm">10691 E Carter Rd</p>
-            <p class="text-[#c8a84b]/85 text-sm">Traverse City, MI 49684</p>
-            <a href="https://maps.google.com/maps?q=10691+East+Carter+Road,+Traverse+City,+MI" target="_blank" rel="noopener" class="text-[#c8a84b] text-xs tracking-widest uppercase mt-3 block hover:text-[#d4bc9a]">Get Directions →</a>
+            <p class="text-[#1A1A1A] text-lg">10691 E Carter Rd</p>
+            <p class="text-[#1A1A1A] text-lg">Traverse City, MI 49684</p>
+            <a href="https://maps.google.com/maps?q=10691+East+Carter+Road,+Traverse+City,+MI" target="_blank" rel="noopener" class="text-[#C8952E] hover:text-[#B8850E] text-sm tracking-widest uppercase mt-3 block font-semibold transition-colors duration-200">Get Directions →</a>
           </div>
-          <div class="border border-white/10 p-6">
+          <div class="bg-white border border-[#E8E0D4] rounded-lg p-6 shadow-sm">
             <p class="section-label mb-3">Phone</p>
-            <a href="tel:2315905566" class="text-[#c8a84b]/85 text-sm hover:text-[#c8a84b] transition-colors">231-590-5566</a>
+            <a href="tel:2315905566" class="text-[#1A1A1A] text-lg hover:text-[#C8952E] transition-colors">231-590-5566</a>
           </div>
         </div>
       </div>

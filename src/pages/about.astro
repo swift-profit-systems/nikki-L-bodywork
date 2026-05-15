@@ -6,26 +6,34 @@ import Layout from '../layouts/Layout.astro';
 
   <div class="pt-16">
 
-    <!-- Hero -->
-    <section class="relative py-24 px-6 bg-[#162040] overflow-hidden">
-      <div class="absolute inset-0 opacity-10">
-        <img src="/images/studio.webp" alt="" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-[#162040]/80"></div>
-      </div>
-      <div class="relative max-w-4xl mx-auto">
-        <p class="section-label mb-6">About Nikki</p>
-        <h1 class="font-['Playfair_Display'] text-5xl md:text-6xl text-[#f0f4ff] leading-tight mb-8">
-          She reads your body<br/>and responds to<br/><em class="text-[#c8a84b]">what it actually needs.</em>
-        </h1>
-        <div class="gold-line"></div>
+    <!-- Hero: split, headline left, portrait right -->
+    <section class="bg-white">
+      <div class="grid md:grid-cols-[55fr_45fr] md:min-h-[500px]">
+        <div class="flex flex-col justify-center py-16 px-6 md:py-24 md:px-12 lg:px-16">
+          <p class="section-label mb-6">About Nikki</p>
+          <h1 class="font-['Playfair_Display'] text-3xl md:text-5xl lg:text-6xl text-[#1A1A1A] leading-tight mb-6">
+            She reads your body and responds to <em class="text-[#C8952E]">what it actually needs.</em>
+          </h1>
+          <div class="w-12 h-px bg-[#C8952E]"></div>
+        </div>
+        <div class="w-full h-[400px] md:h-auto px-6 pb-12 md:p-8 lg:p-12 md:pl-0 lg:pl-0">
+          <img
+            src="/nikki-portrait.webp"
+            alt="Nikki Leonardi, Ashiatsu specialist and massage therapist in Traverse City"
+            class="w-full h-full object-cover rounded-2xl shadow-lg border border-[#E8E0D4]"
+            width="1200"
+            height="1500"
+            loading="eager"
+          />
+        </div>
       </div>
     </section>
 
     <!-- The Origin Story -->
-    <section class="py-20 px-6 bg-[#0d1428]">
+    <section class="py-20 px-6 bg-[#FAF8F5]">
       <div class="max-w-3xl mx-auto">
         <p class="section-label mb-8">How This Started</p>
-        <div class="space-y-6 text-[#c8a84b]/85 leading-relaxed text-lg">
+        <div class="space-y-6 text-[#1A1A1A] leading-relaxed text-lg">
           <p>
             I've been practicing massage therapy for over 13 years, and what drives me now is the same thing that drove me when I started: I want to understand what your body is actually trying to say.
           </p>
@@ -46,10 +54,10 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- The Training -->
-    <section class="py-20 px-6 bg-[#162040]">
+    <section class="py-20 px-6 bg-white">
       <div class="max-w-3xl mx-auto">
         <p class="section-label mb-8">The Training</p>
-        <div class="space-y-6 text-[#c8a84b]/85 leading-relaxed text-lg">
+        <div class="space-y-6 text-[#1A1A1A] leading-relaxed text-lg">
           <p>
             I enrolled at Cortiva Institute of Massage Therapy in Chicago, a rigorous 15-month program with a heavy emphasis on myofascial release. That's where my deep understanding of fascia began, and it's still the foundation of everything I do.
           </p>
@@ -60,19 +68,36 @@ import Layout from '../layouts/Layout.astro';
             Before opening my own practice, I trained in Ashiatsu barefoot massage, Ashi Fusion, and Sara Body Work, including continuing education in Mexico. I wanted as many tools as possible so I'd never have to work inside someone else's limitations.
           </p>
           <p>
-            I started my own business in 2016 and built my practice here in Traverse City. Now, I'm coming full circle, pursuing a chiropractic apprenticeship with George, the same doctor who changed my life when I was in college.
+            Here's something I had almost forgotten. When I was a little kid and people asked what I wanted to be when I grew up, the very first thing I ever said was chiropractor. I hadn't thought about that in years.
+          </p>
+          <p>
+            I started my own practice in Traverse City in 2016 and have been building it ever since. Now I'm circling back. This fall, I'm starting prerequisites at NMC, and I'm also apprenticing with George, a local chiropractor who's been generous enough to mentor me through the clinical side of the work. Two paths, one direction.
+          </p>
+        </div>
+
+        <!-- Pull quote -->
+        <blockquote class="my-12 border-l-4 border-[#C8952E] pl-6 md:pl-8">
+          <p class="font-['Playfair_Display'] text-2xl md:text-3xl text-[#C8952E] italic leading-relaxed">
+            Life has a funny way of circling us back toward the things we're meant for.
+          </p>
+        </blockquote>
+
+        <!-- Retention reassurance: massage stays primary -->
+        <div class="mt-8 px-5 py-4 border-l-2 border-[#c8a84b] bg-[#FAF8F5] rounded-r-lg">
+          <p class="text-[#4A4A4A] text-base italic leading-relaxed font-['Inter']">
+            Massage therapy isn't going anywhere. It remains the heart of my practice. School is the next chapter, not a replacement.
           </p>
         </div>
       </div>
     </section>
 
     <!-- The Approach -->
-    <section class="py-20 px-6 bg-[#0d1428]">
+    <section class="py-20 px-6 bg-[#FAF8F5]">
       <div class="max-w-3xl mx-auto">
         <p class="section-label mb-8">The Approach</p>
-        <div class="space-y-6 text-[#c8a84b]/85 leading-relaxed text-lg">
+        <div class="space-y-6 text-[#1A1A1A] leading-relaxed text-lg">
           <p>
-            I specialize in Ashiatsu (barefoot massage) along with myofascial release, deep tissue work, cupping, and gua sha. But the technique is always secondary to the question I'm asking: <em class="text-[#f0f4ff]">why is this happening, not just where.</em>
+            I specialize in Ashiatsu (barefoot massage) along with myofascial release, deep tissue work, cupping, and gua sha. But the technique is always secondary to the question I'm asking: <em class="text-[#C8952E]">why is this happening, not just where.</em>
           </p>
           <p>
             I view every session as a conversation with the body. My job is to listen well. That means finding the fascial restriction that's been compensating for three years, the structural imbalance that's showing up as knee pain when the real problem is in the hip, the pattern your body developed around an old injury and never let go of.
@@ -85,9 +110,9 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- Credentials -->
-    <section class="py-16 px-6 bg-[#162040]">
-      <div class="max-w-4xl mx-auto">
-        <p class="section-label mb-10">Training & Specializations</p>
+    <section class="py-20 px-6 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <p class="section-label mb-10">Training &amp; Specializations</p>
         <div class="grid md:grid-cols-2 gap-6">
           {[
             { title: 'Ashiatsu Barefoot Massage', desc: 'Specialist-level training in barefoot massage technique using overhead support bars. One of very few practitioners in Northern Michigan.' },
@@ -97,9 +122,9 @@ import Layout from '../layouts/Layout.astro';
             { title: 'Injury/Sports Rehab', desc: 'Specialized work for overuse injuries, repetitive motion patterns, and athletic recovery.' },
             { title: 'Prenatal Massage', desc: 'Therapeutic and safe work for mothers-to-be, addressing the unique structural and comfort needs of pregnancy.' },
           ].map(item => (
-            <div class="border border-white/10 p-6">
-              <h3 class="font-['Playfair_Display'] text-base text-[#f0f4ff] mb-2">{item.title}</h3>
-              <p class="text-[#c8a84b]/50 text-sm leading-relaxed">{item.desc}</p>
+            <div class="bg-white border border-[#E8E0D4] rounded-lg p-6 shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+              <h3 class="font-['Playfair_Display'] text-xl text-[#1A1A1A] mb-2">{item.title}</h3>
+              <p class="text-[#4A4A4A] text-base leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -107,10 +132,10 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- Human section -->
-    <section class="py-20 px-6 bg-[#0d1428]">
+    <section class="py-20 px-6 bg-[#FAF8F5]">
       <div class="max-w-3xl mx-auto">
         <p class="section-label mb-8">The Human Part</p>
-        <div class="space-y-6 text-[#c8a84b]/85 leading-relaxed text-lg">
+        <div class="space-y-6 text-[#1A1A1A] leading-relaxed text-lg">
           <p>
             I'm a Traverse City native. I trail run, bird watch, practice Pilates, and yes, I originally studied opera before I found bodywork. There's more overlap than you'd think. Both are about listening to the body, reading what isn't being said out loud, and responding to it with precision.
           </p>
@@ -127,12 +152,12 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- Studio photos -->
-    <section class="py-16 px-6 bg-[#162040]">
+    <!-- Studio photo -->
+    <section class="py-16 px-6 bg-white">
       <div class="max-w-4xl mx-auto">
         <p class="section-label mb-8">The Studio</p>
-        <p class="text-[#c8a84b]/80 text-sm mb-6">10691 E Carter Rd, Traverse City, MI · <em>New location as of March 2026</em></p>
-        <img src="/images/studio.webp" alt="Nikki Leonardi Bodywork studio — Ashiatsu bars overhead" class="w-full max-h-[500px] object-cover" />
+        <p class="text-[#4A4A4A] text-lg mb-6">10691 E Carter Rd, Traverse City, MI · <em>New location as of March 2026</em></p>
+        <img src="/studio-interior.webp" alt="Nikki Leonardi Bodywork studio, Ashiatsu bars overhead" class="w-full max-h-[500px] object-cover rounded-lg shadow-md" />
       </div>
     </section>
 

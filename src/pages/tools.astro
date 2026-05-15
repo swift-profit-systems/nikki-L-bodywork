@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <Layout
@@ -11,193 +12,237 @@ import Layout from '../layouts/Layout.astro';
   <div class="pt-16">
 
     <!-- PAGE HEADER -->
-    <section class="bg-[#0d1428] py-24 px-6 text-center">
+    <section class="bg-white py-24 px-6 text-center">
       <div class="max-w-3xl mx-auto">
         <p class="section-label mb-6">How the Work Works</p>
-        <h1 class="font-['Playfair_Display'] text-5xl md:text-6xl text-[#f0f4ff] leading-tight mb-8">
+        <h1 class="font-['Playfair_Display'] text-4xl md:text-6xl text-[#1A1A1A] leading-tight mb-8">
           The Tools of the Trade
         </h1>
-        <div class="gold-line mb-8"></div>
-        <p class="text-[#c8a84b]/85 text-lg leading-relaxed max-w-2xl mx-auto">
+        <div class="w-12 h-px bg-[#C8952E] mx-auto mb-8"></div>
+        <p class="text-[#4A4A4A] text-lg leading-relaxed max-w-2xl mx-auto text-balance">
           You don't choose the tools. That's Nikki's job. Each session, she reads what your body needs and draws from her full toolkit accordingly. Here's what's in it.
         </p>
       </div>
     </section>
 
-    <!-- INTRO PHILOSOPHY BLOCK -->
-    <section class="bg-[#1e2d52] py-20 px-6">
+    <!-- INTRO PHILOSOPHY -->
+    <section class="bg-[#5B8FA8] py-20 px-6">
       <div class="max-w-4xl mx-auto">
-        <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl text-[#f0f4ff] mb-8 leading-tight">
-          Every session is integrative.<br/><em class="text-[#c8a84b]">The modality follows the body.</em>
+        <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl text-white mb-8 leading-tight">
+          Every session is integrative.<br/><em class="text-white/90">The modality follows the body.</em>
         </h2>
-        <p class="text-[#c8a84b]/85 text-lg leading-relaxed">
+        <p class="text-white/90 text-lg leading-relaxed">
           Most therapeutic practices hand you a menu and ask you to diagnose yourself. That's backwards. You know where it hurts. Nikki knows why, and which combination of techniques will actually address it. The tools below aren't options you select. They're a toolkit she deploys based on what she reads in your body on the day you come in.
         </p>
       </div>
     </section>
 
-    <!-- TOOL 1: ASHIATSU -->
-    <section class="bg-[#162040] py-24 px-6">
+    <!-- TOOL 1: ASHIATSU. Staggered two-band layout -->
+    <section class="bg-[#FAF8F5] py-24 px-6">
       <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-          <div>
-            <span class="section-label text-[#c8a84b] bg-[#c8a84b]/10 px-3 py-1 inline-block mb-6">Signature Technique</span>
-            <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#f0f4ff] mb-8 leading-tight">
-              Ashiatsu<br/><em class="text-[#c8a84b]">(Barefoot Massage)</em>
-            </h2>
+        <!-- Header band -->
+        <div class="max-w-3xl mb-12">
+          <span class="inline-block text-[#C8952E] bg-[#C8952E]/10 border border-[#C8952E]/30 px-3 py-1 text-sm tracking-widest uppercase font-medium font-['Inter'] rounded-full mb-6">Signature Technique</span>
+          <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#1A1A1A] leading-tight">
+            Ashiatsu<br/><em class="text-[#C8952E]">(Barefoot Massage)</em>
+          </h2>
+        </div>
 
-            <div class="space-y-8">
-              <div>
-                <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-2">What It Is</p>
-                <p class="text-[#c8a84b]/85 leading-relaxed">Massage performed with the feet, supported by overhead bars, instead of the hands. One of very few practitioners of this technique in Northern Michigan.</p>
-              </div>
-              <div>
-                <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-2">What It Does</p>
-                <p class="text-[#c8a84b]/85 leading-relaxed">Delivers sustained, consistent pressure that hands cannot replicate. The contact surface of the foot allows for broader, deeper, more evenly distributed pressure, reaching tissue and holding it in ways that simply aren't possible with hand technique.</p>
-              </div>
-              <div>
-                <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-2">Who It's For</p>
-                <p class="text-[#c8a84b]/85 leading-relaxed">Anyone who has spent years asking for deeper and never found it. Particularly effective for dense muscle tissue, chronic fascial restriction, and full-body work.</p>
-              </div>
+        <!-- Band A: text-left / photo-right -->
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-12">
+          <div class="space-y-8">
+            <div>
+              <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-2 font-semibold">What It Is</p>
+              <p class="text-[#1A1A1A] text-lg leading-relaxed">Massage performed with the feet, supported by overhead bars, instead of the hands. One of very few practitioners of this technique in Northern Michigan.</p>
             </div>
-
-            <div class="mt-10 space-y-4">
-              <div class="border-l-2 border-[#c8a84b]/30 pl-5">
-                <p class="text-[#f0f4ff]/70 text-sm leading-relaxed italic mb-2">"The deepest most comfortable pressure ever. 1st time doing this type of massage and I can't wait for my next one."</p>
-                <p class="text-[#c8a84b]/50 text-xs tracking-widest uppercase">— Matt Schram</p>
-              </div>
-              <div class="border-l-2 border-[#c8a84b]/30 pl-5">
-                <p class="text-[#f0f4ff]/70 text-sm leading-relaxed italic mb-2">"The ashiatsu modality feels like you have 2 people giving you a massage!"</p>
-                <p class="text-[#c8a84b]/50 text-xs tracking-widest uppercase">— Danielle P.</p>
-              </div>
+            <div>
+              <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-2 font-semibold">What It Does</p>
+              <p class="text-[#1A1A1A] text-lg leading-relaxed">Delivers sustained, consistent pressure that hands cannot replicate. The contact surface of the foot allows for broader, deeper, more evenly distributed pressure, reaching tissue and holding it in ways that simply aren't possible with hand technique. Deeper, more consistent pressure, tolerated by the body in a completely different way than fingers, which can be jarring or even inflammatory to the muscles.</p>
             </div>
           </div>
+          <div>
+            <img src="/images/ashiatsu-1.webp" alt="Ashiatsu barefoot massage in practice" class="w-full h-[420px] object-cover object-top rounded-2xl shadow-lg border border-[#E8E0D4]" />
+          </div>
+        </div>
 
-          <div class="grid grid-cols-2 gap-4">
-            <img src="/images/ashiatsu-1.webp" alt="Ashiatsu barefoot massage in practice" class="w-full h-72 object-cover object-top" />
-            <img src="/images/ashiatsu-2.webp" alt="Ashiatsu deep tissue barefoot work" class="w-full h-72 object-cover object-top mt-8" />
+        <!-- Band B: photo-left / text-right -->
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div class="md:order-1 order-2">
+            <img src="/images/ashiatsu-2.webp" alt="Ashiatsu deep tissue barefoot work" class="w-full h-[420px] object-cover object-top rounded-2xl shadow-lg border border-[#E8E0D4]" />
+          </div>
+          <div class="md:order-2 order-1 space-y-8">
+            <div>
+              <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-2 font-semibold">Who It's For</p>
+              <p class="text-[#1A1A1A] text-lg leading-relaxed">Anyone who has spent years asking for deeper and never found it. Particularly effective for dense muscle tissue, chronic fascial restriction, and full-body work.</p>
+            </div>
+            <div class="space-y-5">
+              <div class="border-l-4 border-[#C8952E] pl-5">
+                <p class="text-[#1A1A1A] text-base leading-relaxed italic mb-2">"The deepest most comfortable pressure ever. 1st time doing this type of massage and I can't wait for my next one."</p>
+                <p class="text-[#4A4A4A] text-xs tracking-widest uppercase font-medium">— Matt Schram</p>
+              </div>
+              <div class="border-l-4 border-[#C8952E] pl-5">
+                <p class="text-[#1A1A1A] text-base leading-relaxed italic mb-2">"The ashiatsu modality feels like you have 2 people giving you a massage!"</p>
+                <p class="text-[#4A4A4A] text-xs tracking-widest uppercase font-medium">— Danielle P.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Gold divider -->
+    <div class="bg-white py-1"><div class="max-w-4xl mx-auto px-6"><div class="h-px bg-gradient-to-r from-transparent via-[#C8952E]/40 to-transparent"></div></div></div>
+
     <!-- TOOL 2: DEEP TISSUE -->
-    <section class="bg-[#0d1428] py-24 px-6">
+    <!-- TODO content: add a representative photo for this modality (image slot ready in right column when uncommented) -->
+    <section class="bg-white py-24 px-6">
       <div class="max-w-4xl mx-auto">
-        <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#f0f4ff] mb-10 leading-tight">
-          Deep Tissue Massage
-        </h2>
+        <div class="flex items-center gap-5 mb-4">
+          <Icon name="arcs" size={56} class="shrink-0" />
+          <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#1A1A1A] leading-tight">
+            Deep Tissue Massage
+          </h2>
+        </div>
+        <span class="inline-block text-[#C8952E] bg-[#C8952E]/10 border border-[#C8952E]/30 px-3 py-1 text-sm tracking-widest uppercase font-medium font-['Inter'] rounded-full mb-10">Foundational</span>
 
-        <div class="grid md:grid-cols-3 gap-10 mb-10">
+        <div class="grid md:grid-cols-3 gap-10">
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">What It Is</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">Targeted manual therapy that works through surface layers to address deeper muscle tissue and chronic tension patterns.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">What It Is</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">Targeted manual therapy that works through surface layers to address deeper muscle tissue and chronic tension patterns.</p>
           </div>
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">What It Does</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">Breaks down adhesions, reduces chronic holding patterns, and restores mobility to muscles that have been locked in compensation. Real deep tissue work isn't about pressure; it's about knowing what's holding the tension and why.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">What It Does</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">Breaks down adhesions, reduces chronic holding patterns, and restores mobility to muscles that have been locked in compensation. Real deep tissue work isn't about pressure; it's about knowing what's holding the tension and why.</p>
           </div>
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">Who It's For</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">Athletes, active people with overuse patterns, anyone carrying chronic tension that lighter work hasn't touched.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">Who It's For</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">Athletes, active people with overuse patterns, anyone carrying chronic tension that lighter work hasn't touched.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="border-l-2 border-[#c8a84b]/30 pl-5">
-          <p class="text-[#f0f4ff]/70 text-sm leading-relaxed italic mb-2">"She is very knowledgeable about the body and the muscle... I'm glad I opened up my mind and tried something different."</p>
-          <p class="text-[#c8a84b]/50 text-xs tracking-widest uppercase">— Albert Patrick</p>
-        </div>
+    <!-- Soft mid-page CTA #1 (after 2nd modality) -->
+    <section class="bg-[#FAF8F5] py-12 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-[#1A1A1A] text-xl md:text-2xl font-['Playfair_Display'] italic mb-6 leading-relaxed">
+          You don't need to know which technique fits. That's the work.
+        </p>
+        <a href="/book" class="btn-primary">Book a Session</a>
       </div>
     </section>
 
     <!-- TOOL 3: MYOFASCIAL RELEASE -->
-    <section class="bg-[#162040] py-24 px-6">
+    <!-- TODO content: add a representative photo for this modality -->
+    <section class="bg-white py-24 px-6">
       <div class="max-w-4xl mx-auto">
-        <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#f0f4ff] mb-10 leading-tight">
-          Myofascial Release
-        </h2>
+        <div class="flex items-center gap-5 mb-4">
+          <Icon name="waves" size={56} class="shrink-0" />
+          <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#1A1A1A] leading-tight">
+            Myofascial Release
+          </h2>
+        </div>
+        <span class="inline-block text-[#C8952E] bg-[#C8952E]/10 border border-[#C8952E]/30 px-3 py-1 text-sm tracking-widest uppercase font-medium font-['Inter'] rounded-full mb-10">Connective Tissue Work</span>
 
         <div class="grid md:grid-cols-3 gap-10">
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">What It Is</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">Manual therapy targeting the fascial system, the connective tissue that surrounds every muscle, bone, nerve, and organ in the body.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">What It Is</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">Manual therapy targeting the fascial system, the connective tissue that surrounds every muscle, bone, nerve, and organ in the body.</p>
           </div>
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">What It Does</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">Fascia responds to sustained, gentle-to-moderate pressure differently than muscle. When restricted, it creates patterns of tension that don't release under standard deep tissue technique. Myofascial work addresses those patterns directly: slower, more specific, and often what unlocks the thing that nothing else has touched.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">What It Does</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">Fascia responds to sustained, gentle-to-moderate pressure differently than muscle. When restricted, it creates patterns of tension that don't release under standard deep tissue technique. Myofascial work addresses those patterns directly: slower, more specific, and often what unlocks the thing that nothing else has touched.</p>
           </div>
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">Who It's For</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">Anyone with restricted movement, chronic pain that keeps returning, or tension that feels deep but diffuse rather than in one specific muscle.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">Who It's For</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">Anyone with restricted movement, chronic pain that keeps returning, or tension that feels deep but diffuse rather than in one specific muscle.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Gold divider -->
+    <div class="bg-[#FAF8F5] py-1"><div class="max-w-4xl mx-auto px-6"><div class="h-px bg-gradient-to-r from-transparent via-[#C8952E]/40 to-transparent"></div></div></div>
+
     <!-- TOOL 4: CUPPING -->
-    <section class="bg-[#0d1428] py-24 px-6">
+    <!-- TODO content: add a representative photo for this modality -->
+    <section class="bg-[#FAF8F5] py-24 px-6">
       <div class="max-w-4xl mx-auto">
-        <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#f0f4ff] mb-10 leading-tight">
-          Cupping Therapy
-        </h2>
+        <div class="flex items-center gap-5 mb-4">
+          <Icon name="rings" size={56} class="shrink-0" />
+          <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#1A1A1A] leading-tight">
+            Cupping Therapy
+          </h2>
+        </div>
+        <span class="inline-block text-[#C8952E] bg-[#C8952E]/10 border border-[#C8952E]/30 px-3 py-1 text-sm tracking-widest uppercase font-medium font-['Inter'] rounded-full mb-10">Decompression</span>
 
-        <div class="grid md:grid-cols-3 gap-10 mb-10">
+        <div class="grid md:grid-cols-3 gap-10">
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">What It Is</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">Silicone or glass cups applied to the skin to create negative pressure (suction) within the tissue.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">What It Is</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">Silicone or glass cups applied to the skin to create negative pressure (suction) within the tissue.</p>
           </div>
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">What It Does</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">While most bodywork pushes down into tissue, cupping lifts. The suction creates space within the fascia and muscle layers, draws fresh circulation into restricted areas, and can break up adhesions that compression-based work can't reach.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">What It Does</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">While most bodywork pushes down into tissue, cupping lifts. The suction creates space within the fascia and muscle layers, draws fresh circulation into restricted areas, and can break up adhesions that compression-based work can't reach.</p>
           </div>
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">Who It's For</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">Particularly effective for myofascial restriction, chronic tension that feels stuck, and areas where circulation and tissue hydration are poor.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">Who It's For</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">Particularly effective for myofascial restriction, chronic tension that feels stuck, and areas where circulation and tissue hydration are poor.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="border-l-2 border-[#c8a84b]/30 pl-5">
-          <p class="text-[#f0f4ff]/70 text-sm leading-relaxed italic mb-2">"My favorite is the cupping — it really releases the sticky myofascial connective tissue and promotes healing. I have felt mass improvement after this procedure."</p>
-          <p class="text-[#c8a84b]/50 text-xs tracking-widest uppercase">— Michelle Mitchell</p>
-        </div>
+    <!-- Soft mid-page CTA #2 (after 4th modality) -->
+    <section class="bg-white py-12 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-[#1A1A1A] text-xl md:text-2xl font-['Playfair_Display'] italic mb-6 leading-relaxed">
+          The right tool meets the body where it is. That's why Nikki picks.
+        </p>
+        <a href="/book" class="btn-primary">Book a Session</a>
       </div>
     </section>
 
     <!-- TOOL 5: GUA SHA -->
-    <section class="bg-[#162040] py-24 px-6">
+    <!-- TODO content: add a representative photo for this modality -->
+    <section class="bg-[#FAF8F5] py-24 px-6">
       <div class="max-w-4xl mx-auto">
-        <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#f0f4ff] mb-10 leading-tight">
-          Gua Sha
-        </h2>
+        <div class="flex items-center gap-5 mb-4">
+          <Icon name="strokes" size={56} class="shrink-0" />
+          <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#1A1A1A] leading-tight">
+            Gua Sha
+          </h2>
+        </div>
+        <span class="inline-block text-[#C8952E] bg-[#C8952E]/10 border border-[#C8952E]/30 px-3 py-1 text-sm tracking-widest uppercase font-medium font-['Inter'] rounded-full mb-10">Tool-Assisted</span>
 
         <div class="grid md:grid-cols-3 gap-10">
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">What It Is</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">Instrument-assisted soft tissue mobilization using a smooth-edged tool applied with pressure along muscle and fascial planes.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">What It Is</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">Instrument-assisted soft tissue mobilization using a smooth-edged tool applied with pressure along muscle and fascial planes.</p>
           </div>
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">What It Does</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">Creates therapeutic microtrauma that triggers the body's healing response, breaking down scar tissue and fascial adhesions, improving tissue mobility, and increasing local blood flow to chronically restricted areas.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">What It Does</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">Creates therapeutic microtrauma that triggers the body's healing response, breaking down scar tissue and fascial adhesions, improving tissue mobility, and increasing local blood flow to chronically restricted areas.</p>
           </div>
           <div>
-            <p class="text-[#c8a84b]/40 text-xs tracking-widest uppercase mb-3">Who It's For</p>
-            <p class="text-[#c8a84b]/85 leading-relaxed text-sm">Effective for chronic muscle tension, restricted range of motion, scar tissue, and areas where fascial layers have adhered together from overuse or old injury.</p>
+            <p class="text-[#4A4A4A] text-sm tracking-widest uppercase mb-3 font-semibold">Who It's For</p>
+            <p class="text-[#1A1A1A] text-base leading-relaxed">Effective for chronic muscle tension, restricted range of motion, scar tissue, and areas where fascial layers have adhered together from overuse or old injury.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CLOSING CTA -->
-    <section class="bg-[#0d1428] py-24 px-6 text-center">
+    <section class="bg-white py-24 px-6 text-center">
       <div class="max-w-2xl mx-auto">
         <p class="section-label mb-6">Ready?</p>
-        <h2 class="font-['Playfair_Display'] text-4xl md:text-5xl text-[#f0f4ff] mb-8 leading-tight">
-          You show up.<br/><em class="text-[#c8a84b]">She takes it from there.</em>
+        <h2 class="font-['Playfair_Display'] text-3xl md:text-5xl text-[#1A1A1A] mb-8 leading-tight">
+          You show up.<br/><em class="text-[#C8952E]">She takes it from there.</em>
         </h2>
-        <p class="text-[#c8a84b]/80 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+        <p class="text-[#4A4A4A] text-lg leading-relaxed mb-10 max-w-xl mx-auto">
           When you book a session, you don't select a modality. You tell Nikki what you're working with: where you've been, what you're feeling, what hasn't worked. She does the assessment and makes the call. That's what 13 years of practice looks like.
         </p>
-        <a href="/book" class="btn-primary text-base px-12 py-4">Book a Session</a>
+        <a href="/book" class="btn-primary text-base px-10 py-4">Book a Session</a>
       </div>
     </section>
 

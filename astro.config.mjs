@@ -6,7 +6,10 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://nikki-l-bodywork-production.up.railway.app',
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    server: {
+      allowedHosts: ['.trycloudflare.com']
+    }
   },
   integrations: [mdx()]
 });

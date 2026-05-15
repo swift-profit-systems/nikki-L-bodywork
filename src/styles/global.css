@@ -3,12 +3,25 @@
 @plugin '@tailwindcss/typography';
 
 :root {
-  --color-stone: #162040;
-  --color-bark: #1e2d52;
-  --color-earth: #8b6914;
-  --color-clay: #c8a84b;
-  --color-cream: #f0f4ff;
-  --color-white: #faf8f4;
+  /* Light mode palette */
+  --bg-primary: #FFFFFF;
+  --bg-cream: #FAF8F5;
+  --bg-studio-blue: #5B8FA8;
+  --bg-studio-blue-light: #6FA3B8;
+  --bg-studio-blue-dark: #2D4F5E;
+  --bg-navy: #0d1428;
+
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-light: #FFFFFF;
+
+  --gold: #C8952E;
+  --gold-light: #c8a84b;
+  --gold-dark: #B8850E;
+  --teal: #4A9A9A;
+  --warm-brown: #7A6340;
+
+  --card-border: #E8E0D4;
 }
 
 html {
@@ -17,41 +30,85 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--color-stone);
-  color: var(--color-cream);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 h1, h2, h3, .serif {
   font-family: 'Playfair Display', serif;
 }
 
+/* Primary CTA: gold filled, rounded, shadowed */
 .btn-primary {
-  @apply inline-block bg-[#c8a84b] text-[#162040] font-semibold px-8 py-3 tracking-wide hover:bg-[#d4bc9a] transition-colors duration-200;
+  display: inline-block;
+  background-color: var(--gold);
+  color: #FFFFFF;
   font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--gold);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: var(--gold-dark);
+  border-color: var(--gold-dark);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
 }
 
+/* Outline CTA: for use on light backgrounds */
 .btn-outline {
-  @apply inline-block border border-[#c8a84b] text-[#c8a84b] font-semibold px-8 py-3 tracking-wide hover:bg-[#c8a84b] hover:text-[#162040] transition-colors duration-200;
+  display: inline-block;
+  background-color: transparent;
+  color: var(--gold);
   font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--gold);
+  border-radius: 0.5rem;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  background-color: var(--gold);
+  color: #FFFFFF;
 }
 
+/* Small gold uppercase section labels */
 .section-label {
   font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
+  font-size: 1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-clay);
+  color: var(--gold);
+  font-weight: 500;
 }
 
 .gold-line {
   width: 40px;
   height: 1px;
-  background: var(--color-clay);
+  background: var(--gold);
   display: inline-block;
+}
+
+/* Subtle divider for light sections */
+.divider-light {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--card-border), transparent);
+}
+/* Divider for blue accent sections */
+.divider-on-blue {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
 }

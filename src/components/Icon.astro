@@ -1,0 +1,77 @@
+---
+interface Props {
+  name: 'star' | 'speech' | 'hourglass' | 'ashi-bars' | 'shield-check' | 'arcs' | 'waves' | 'rings' | 'strokes';
+  size?: number;
+  class?: string;
+}
+const { name, size = 32, class: className = '' } = Astro.props;
+---
+{name === 'star' && (
+  <svg width={size} height={size} viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class={className}>
+    <polygon points="25,3 30.29,17.72 45.92,18.20 33.56,27.78 37.93,42.79 25,34 12.07,42.79 16.44,27.78 4.08,18.20 19.71,17.72" stroke="#C8952E" stroke-width="2" stroke-linejoin="round"/>
+  </svg>
+)}
+{name === 'speech' && (
+  <svg width={size} height={size} viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class={className}>
+    <path d="M 7,11 L 43,11 Q 47,11 47,15 L 47,33 Q 47,37 43,37 L 17,37 L 11,43 L 13,37 L 7,37 Q 3,37 3,33 L 3,15 Q 3,11 7,11 Z" fill="none" stroke="#C8952E" stroke-width="2"/>
+    <circle cx="17" cy="24" r="1.5" fill="#C8952E"/>
+    <circle cx="25" cy="24" r="1.5" fill="#C8952E"/>
+    <circle cx="33" cy="24" r="1.5" fill="#C8952E"/>
+  </svg>
+)}
+{name === 'hourglass' && (
+  <svg width={size} height={size} viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class={className}>
+    <path d="M 11,7 L 39,7 L 39,11 L 25,25 L 39,39 L 39,43 L 11,43 L 11,39 L 25,25 L 11,11 Z" fill="none" stroke="#C8952E" stroke-width="2" stroke-linejoin="round"/>
+  </svg>
+)}
+{name === 'ashi-bars' && (
+  <svg width={size} height={size} viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class={className}>
+    <g stroke="#C8952E" stroke-width="2.5" stroke-linecap="round" fill="none">
+      <line x1="11" y1="6" x2="39" y2="6"/>
+      <line x1="16" y1="6" x2="16" y2="44"/>
+      <line x1="34" y1="6" x2="34" y2="44"/>
+    </g>
+  </svg>
+)}
+{name === 'shield-check' && (
+  <svg width={size} height={size} viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class={className}>
+    <path d="M 11,10 L 39,10 L 39,28 Q 39,40 25,44 Q 11,40 11,28 Z" fill="none" stroke="#C8952E" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M 20,24 L 24,29 L 32,19" fill="none" stroke="#C8952E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+)}
+{name === 'arcs' && (
+  <svg width={size} height={size} viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class={className}>
+    <g stroke="#C8952E" stroke-width="1.5" fill="none">
+      <path d="M 12,18 Q 25,8 38,18"/>
+      <path d="M 8,28 Q 25,18 42,28"/>
+      <path d="M 5,38 Q 25,28 45,38"/>
+    </g>
+  </svg>
+)}
+{name === 'waves' && (
+  <svg width={size} height={size} viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class={className}>
+    <g stroke="#C8952E" stroke-width="1.2" fill="none">
+      <path d="M 5,17.5 C 15,11 35,24 45,17.5"/>
+      <path d="M 5,25 C 15,19 35,31 45,25"/>
+      <path d="M 5,32.5 C 15,26 35,39 45,32.5"/>
+    </g>
+  </svg>
+)}
+{name === 'rings' && (
+  <svg width={size} height={size} viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class={className}>
+    <g stroke="#C8952E" stroke-width="1.2" fill="none">
+      <circle cx="25" cy="25" r="8"/>
+      <circle cx="25" cy="25" r="14"/>
+      <circle cx="25" cy="25" r="20"/>
+    </g>
+  </svg>
+)}
+{name === 'strokes' && (
+  <svg width={size} height={size} viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class={className}>
+    <g stroke="#C8952E" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <line x1="6" y1="16" x2="38" y2="19"/>
+      <line x1="6" y1="25" x2="41" y2="28"/>
+      <line x1="6" y1="34" x2="38" y2="37"/>
+    </g>
+  </svg>
+)}
