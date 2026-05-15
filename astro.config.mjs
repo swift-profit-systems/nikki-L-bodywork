@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 
 export default defineConfig({
-  site: 'https://nikki-l-bodywork-production.up.railway.app',
+  site: 'https://nlbodyworks.com',
   vite: {
     plugins: [tailwindcss()],
     server: {
