@@ -240,30 +240,146 @@ import Icon from '../components/Icon.astro';
         </div>
       </div>
 
-      <!-- Packages: 10-Pack → 5-Pack → 3-Pack (descending) -->
+      <!-- Packages: accordion grouped by session length -->
       <div class="mt-12 pt-10 border-t border-[#E8E0D4]">
         <p class="section-label mb-5">Packages</p>
-        <div class="space-y-3">
-          {[
-            { label: '10-Pack: Ten 60-minute sessions', price: '$1,050', desc: '$105/session, save $200. Sessions scheduled individually at your convenience. Expires 12 months from purchase. Non-transferable, non-refundable.' },
-            { label: '5-Pack: Five 60-minute sessions', price: '$550', desc: '$110/session, save $75. Sessions scheduled individually at your convenience. Expires 9 months from purchase. Non-transferable, non-refundable.' },
-            { label: '3-Pack: Three 60-minute sessions', price: '$345', desc: '$115/session, save $30. Sessions scheduled individually at your convenience. Expires 6 months from purchase. Non-transferable, non-refundable.' },
-          ].map(s => (
-            <a href="/book" class="block group">
-              <div class="bg-white border border-[#E8E0D4] rounded-lg p-5 md:p-6 flex items-start justify-between shadow-sm hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
-                <div class="flex-1">
-                  <p class="text-[#1A1A1A] group-hover:text-[#C8952E] transition-colors duration-200 font-['Inter'] font-medium text-lg">{s.label}</p>
-                  <p class="text-[#4A4A4A] text-sm mt-1 leading-relaxed">{s.desc}</p>
-                </div>
-                <div class="text-right ml-6 shrink-0">
-                  <p class="font-['Playfair_Display'] text-2xl text-[#C8952E]">{s.price}</p>
-                  <p class="text-[#C8952E] hover:underline text-xs mt-1 tracking-widest uppercase font-semibold">Book →</p>
-                </div>
+        <div class="space-y-3" id="packages-accordion">
+
+          <!-- 60 Minute Packages -->
+          <div class="pkg-group border border-[#E8E0D4] rounded-lg overflow-hidden shadow-sm">
+            <button class="pkg-header w-full flex items-center justify-between px-5 py-4 bg-white hover:bg-[#FAF8F5] transition-colors duration-200" aria-expanded="false">
+              <span class="font-['Inter'] font-semibold text-[#1A1A1A] text-base tracking-wide">60 Minute Packages</span>
+              <svg class="pkg-chevron w-5 h-5 text-[#C8952E] transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="pkg-content hidden">
+              <div class="space-y-2 p-3 bg-[#FAF8F5]">
+                {[
+                  { label: '10-Pack: Ten sessions', price: '$1,050', desc: '$105/session, save $200. Expires 12 months from purchase. Non-transferable, non-refundable.' },
+                  { label: '5-Pack: Five sessions', price: '$550', desc: '$110/session, save $75. Expires 9 months from purchase. Non-transferable, non-refundable.' },
+                  { label: '3-Pack: Three sessions', price: '$345', desc: '$115/session, save $30. Expires 6 months from purchase. Non-transferable, non-refundable.' },
+                ].map(s => (
+                  <a href="/book" class="block group">
+                    <div class="bg-white border border-[#E8E0D4] rounded-lg p-4 md:p-5 flex items-start justify-between hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+                      <div class="flex-1">
+                        <p class="text-[#1A1A1A] group-hover:text-[#C8952E] transition-colors duration-200 font-['Inter'] font-medium text-base">{s.label}</p>
+                        <p class="text-[#4A4A4A] text-sm mt-1 leading-relaxed">{s.desc}</p>
+                      </div>
+                      <div class="text-right ml-5 shrink-0">
+                        <p class="font-['Playfair_Display'] text-xl text-[#C8952E]">{s.price}</p>
+                        <p class="text-[#C8952E] text-xs mt-1 tracking-widest uppercase font-semibold">Book →</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
               </div>
-            </a>
-          ))}
+            </div>
+          </div>
+
+          <!-- 75 Minute Packages -->
+          <div class="pkg-group border border-[#E8E0D4] rounded-lg overflow-hidden shadow-sm">
+            <button class="pkg-header w-full flex items-center justify-between px-5 py-4 bg-white hover:bg-[#FAF8F5] transition-colors duration-200" aria-expanded="false">
+              <span class="font-['Inter'] font-semibold text-[#1A1A1A] text-base tracking-wide">75 Minute Packages</span>
+              <svg class="pkg-chevron w-5 h-5 text-[#C8952E] transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="pkg-content hidden">
+              <div class="space-y-2 p-3 bg-[#FAF8F5]">
+                {[
+                  { label: '5-Pack: Five sessions', price: '$660', desc: '$132/session, save $90. Expires 9 months from purchase. Non-transferable, non-refundable.' },
+                  { label: '3-Pack: Three sessions', price: '$414', desc: '$138/session, save $36. Expires 6 months from purchase. Non-transferable, non-refundable.' },
+                ].map(s => (
+                  <a href="/book" class="block group">
+                    <div class="bg-white border border-[#E8E0D4] rounded-lg p-4 md:p-5 flex items-start justify-between hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+                      <div class="flex-1">
+                        <p class="text-[#1A1A1A] group-hover:text-[#C8952E] transition-colors duration-200 font-['Inter'] font-medium text-base">{s.label}</p>
+                        <p class="text-[#4A4A4A] text-sm mt-1 leading-relaxed">{s.desc}</p>
+                      </div>
+                      <div class="text-right ml-5 shrink-0">
+                        <p class="font-['Playfair_Display'] text-xl text-[#C8952E]">{s.price}</p>
+                        <p class="text-[#C8952E] text-xs mt-1 tracking-widest uppercase font-semibold">Book →</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- 90 Minute Packages -->
+          <div class="pkg-group border border-[#E8E0D4] rounded-lg overflow-hidden shadow-sm">
+            <button class="pkg-header w-full flex items-center justify-between px-5 py-4 bg-white hover:bg-[#FAF8F5] transition-colors duration-200" aria-expanded="false">
+              <span class="font-['Inter'] font-semibold text-[#1A1A1A] text-base tracking-wide">90 Minute Packages</span>
+              <svg class="pkg-chevron w-5 h-5 text-[#C8952E] transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="pkg-content hidden">
+              <div class="space-y-2 p-3 bg-[#FAF8F5]">
+                {[
+                  { label: '5-Pack: Five sessions', price: '$770', desc: '$154/session, save $105. Expires 9 months from purchase. Non-transferable, non-refundable.' },
+                  { label: '3-Pack: Three sessions', price: '$483', desc: '$161/session, save $42. Expires 6 months from purchase. Non-transferable, non-refundable.' },
+                ].map(s => (
+                  <a href="/book" class="block group">
+                    <div class="bg-white border border-[#E8E0D4] rounded-lg p-4 md:p-5 flex items-start justify-between hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+                      <div class="flex-1">
+                        <p class="text-[#1A1A1A] group-hover:text-[#C8952E] transition-colors duration-200 font-['Inter'] font-medium text-base">{s.label}</p>
+                        <p class="text-[#4A4A4A] text-sm mt-1 leading-relaxed">{s.desc}</p>
+                      </div>
+                      <div class="text-right ml-5 shrink-0">
+                        <p class="font-['Playfair_Display'] text-xl text-[#C8952E]">{s.price}</p>
+                        <p class="text-[#C8952E] text-xs mt-1 tracking-widest uppercase font-semibold">Book →</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- 120 Minute Packages -->
+          <div class="pkg-group border border-[#E8E0D4] rounded-lg overflow-hidden shadow-sm">
+            <button class="pkg-header w-full flex items-center justify-between px-5 py-4 bg-white hover:bg-[#FAF8F5] transition-colors duration-200" aria-expanded="false">
+              <span class="font-['Inter'] font-semibold text-[#1A1A1A] text-base tracking-wide">120 Minute Packages</span>
+              <svg class="pkg-chevron w-5 h-5 text-[#C8952E] transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="pkg-content hidden">
+              <div class="space-y-2 p-3 bg-[#FAF8F5]">
+                {[
+                  { label: '5-Pack: Five sessions', price: '$880', desc: '$176/session, save $370. Expires 9 months from purchase. Non-transferable, non-refundable.' },
+                  { label: '3-Pack: Three sessions', price: '$552', desc: '$184/session, save $198. Expires 6 months from purchase. Non-transferable, non-refundable.' },
+                ].map(s => (
+                  <a href="/book" class="block group">
+                    <div class="bg-white border border-[#E8E0D4] rounded-lg p-4 md:p-5 flex items-start justify-between hover:shadow-md hover:border-[#c8a84b]/30 transition-all duration-200">
+                      <div class="flex-1">
+                        <p class="text-[#1A1A1A] group-hover:text-[#C8952E] transition-colors duration-200 font-['Inter'] font-medium text-base">{s.label}</p>
+                        <p class="text-[#4A4A4A] text-sm mt-1 leading-relaxed">{s.desc}</p>
+                      </div>
+                      <div class="text-right ml-5 shrink-0">
+                        <p class="font-['Playfair_Display'] text-xl text-[#C8952E]">{s.price}</p>
+                        <p class="text-[#C8952E] text-xs mt-1 tracking-widest uppercase font-semibold">Book →</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('#packages-accordion .pkg-header').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const group = btn.closest('.pkg-group');
+              const content = group.querySelector('.pkg-content');
+              const chevron = btn.querySelector('.pkg-chevron');
+              const isOpen = !content.classList.contains('hidden');
+              content.classList.toggle('hidden', isOpen);
+              chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+              btn.setAttribute('aria-expanded', String(!isOpen));
+            });
+          });
+        });
+      </script>
 
       <!-- Add-ons -->
       <div class="mt-12 pt-10 border-t border-[#E8E0D4]">
